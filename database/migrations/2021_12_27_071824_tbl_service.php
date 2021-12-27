@@ -13,14 +13,14 @@ class TblService extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_item_card', function (Blueprint $table) {
+        Schema::create('tbl_service', function (Blueprint $table) {
             $table -> id();
             $table -> char('id_item', 100);
             $table -> char('id_card', 100);
             $table -> char('id_service', 100);
             $table -> integer('qt');
-            $table -> integer('price_at', 50);
-            $table -> integer('total', 50);
+            $table -> double('price_at', 30);
+            $table -> double('total', 30);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });
@@ -33,6 +33,6 @@ class TblService extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_item_card');
+        Schema::dropIfExists('tbl_service');
     }
 }

@@ -28,12 +28,13 @@ class DatabaseSeeder extends Seeder
         $this -> createRole('8','Cleaning Service', '-');
         // create laundry setting 
         $this -> createSetting('APP_NAME', 'Application Name', 'Mondry');
-        $this -> createSetting('OWNER', 'Owner Name', 'NadhMedia');
+        $this -> createSetting('OWNER', 'Owner Name', 'NadhaMedia');
         $this -> createSetting('EMAIL', 'Email', 'hi@nadhamedia.com');
         $this -> createSetting('ADDRESS', 'Laundry Name', 'Mondry');
         $this -> createSetting('LANG', 'Language', 'ID');
         $this -> createSetting('DOMAIN', 'Domain name', 'http://mondry.nadhamedia.com');
         $this -> createSetting('USING_WHATSAPP_GATEWAY', 'Laundry using whatsapp gateway','Y');
+        $this -> createSetting('API_WOOWA', 'API Key Woowa', '-');
     }
 
     function createUser($username, $password, $role)

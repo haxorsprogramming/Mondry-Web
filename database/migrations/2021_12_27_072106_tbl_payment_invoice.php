@@ -19,10 +19,10 @@ class TblPaymentInvoice extends Migration
             $table -> char('id_card', 100);
             $table -> char('username_employee', 100);
             $table -> char('promo_code', 100);
-            $table -> integer('total', 50);
-            $table -> integer('cash', 50);;
-            $table -> integer('disc_price', 50);
-            
+            $table -> double('total', 30);
+            $table -> double('cash', 30);
+            $table -> double('disc_price', 30);
+            $table -> char('status_payment', 100);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });
