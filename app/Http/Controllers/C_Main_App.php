@@ -22,4 +22,9 @@ class C_Main_App extends Controller
         $dr = ['pageTitle' => 'Dashboard Page', 'page' => 'mainApp', 'appName' => $appName];
         return view('app.mainApp', $dr);
     }
+
+    public function dashboardPage()
+    {
+        echo "Dashboard";
+    }
 }

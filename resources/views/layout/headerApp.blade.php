@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ $appName }} - {{ $pageTitle }}</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link rel="stylesheet" href="{{ asset('/ladun/lib/acara') }}//vendor/chartist/css/chartist.min.css">
-    <link href="{{ asset('/ladun/lib/acara') }}//vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="{{ asset('/ladun/lib/acara') }}//vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="{{ asset('/ladun/lib/acara') }}//css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/ladun/lib/acara') }}/vendor/chartist/css/chartist.min.css">
+    <link href="{{ asset('/ladun/lib/acara') }}/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="{{ asset('/ladun/lib/acara') }}/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="{{ asset('/ladun/lib/acara') }}/css/style.css" rel="stylesheet">
+    <link href="{{ asset('/ladun/base/css') }}/nprogress.css" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="{{ asset('/ladun/lib/acara') }}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
@@ -69,7 +71,7 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
-                            <div class="dashboard_bar">
+                            <div class="dashboard_bar" id="txtTitlePage">
                                 Dashboard
                             </div>
                         </div>
