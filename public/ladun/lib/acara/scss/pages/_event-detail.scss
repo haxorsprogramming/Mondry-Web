@@ -1,0 +1,27 @@
+.share-icon{
+	height:55px;
+	width:55px;
+	line-height:52px;
+	text-align:center;
+	cursor:pointer;
+	border-radius:$radius;
+	border:1px solid rgba($primary,0.4);
+	@include respond ('laptop'){
+		height:40px;
+		width:40px;
+		line-height:38px;
+		svg{
+			width:20px;
+		}
+	}
+}
+.event-detail-bx{
+	.title{
+		font-size:28px;
+		line-height: 40px;
+		@include respond ('phone'){
+			font-size: 18px;
+			line-height: 25px;
+		}
+	}
+}
