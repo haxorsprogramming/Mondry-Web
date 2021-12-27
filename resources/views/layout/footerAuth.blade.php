@@ -5,7 +5,7 @@
 <script src="{{ asset('/ladun/lib/acara') }}/js/custom.min.js"></script>
 <script src="{{ asset('/ladun/lib/acara') }}/js/deznav-init.js"></script>
 <script>
-    const server = "{{ url('') }}";
+    const server = "{{ url('') }}/";
 </script>
 <script src="{{ asset('/ladun/base/js/'.$page.'.js') }}"></script> 
 </body>

@@ -15,30 +15,36 @@
                                         </a>
                                     </div>
                                     <h4 class="text-center mb-4 text-white">Sign in your account</h4>
-                                    <form action="index.html">
+                                    <div class="form-group">
+                                        <label class="mb-1 text-white"><strong>Email</strong></label>
+                                        <input type="text" class="form-control" id="txtUsername" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="mb-1 text-white"><strong>Password</strong></label>
+                                        <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                                    </div>
+                                    <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                         <div class="form-group">
-                                            <label class="mb-1 text-white"><strong>Email</strong></label>
-                                            <input type="text" class="form-control" id="txtUsername" placeholder="Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="mb-1 text-white"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" id="txtPassword" placeholder="Password">
-                                        </div>
-                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                            <div class="form-group">
-                                                <div class="custom-control custom-checkbox ml-1 text-white">
-                                                    <input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
-                                                    <label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <a class="text-white" href="page-forgot-password.html">Forgot Password?</a>
+                                            <div class="custom-control custom-checkbox ml-1 text-white">
+                                                <input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
+                                                <label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
                                             </div>
                                         </div>
-                                        <div class="text-center">
-                                            <a class="btn bg-white text-primary btn-block" @click="loginAtc()">Sign Me In</a>
+                                        <div class="form-group">
+                                            <a class="text-white" href="page-forgot-password.html">Forgot Password?</a>
                                         </div>
-                                    </form>
+                                    </div>
+                                    <div style="margin-top:20px;margin-bottom:20px;display:none;" id="divAuthStatus">
+                                        <div class="alert alert-warning alert-dismissible fade show">
+                                            <strong>@{{ titleErrorAuth }}</strong> @{{ textError }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="btn bg-white text-primary btn-block" @click="loginAtc()">Sign Me In</a>
+                                    </div>
+
                                     <div class="new-account mt-3">
                                         <p class="text-white">Don't have an account? <a class="text-white" href="./page-register.html">Sign up</a></p>
                                     </div>
@@ -51,4 +57,4 @@
         </div>
     </div>
 
-@include('layout.footerAuth')
+    @include('layout.footerAuth')
