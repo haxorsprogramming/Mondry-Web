@@ -8,6 +8,6 @@ class C_Home extends Controller
 {
     public function homePage()
     {
-        echo "Homepage";
+        
     }
 }
