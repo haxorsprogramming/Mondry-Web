@@ -19,7 +19,8 @@ class TblEmployee extends Migration
             $table -> char('name', 100);
             $table -> char('address', 200) -> nullable();
             $table -> char('email', 200) -> nullable();
-            $table -> char('phone_number', 200) -> nullable(); 
+            $table -> char('phone_number', 200) -> nullable();
+            $table -> char('id_branch', 100); 
             $table -> timestamps(); 
             $table -> char('active', 1);
         });

@@ -13,7 +13,19 @@ class TblBranch extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_branch', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('id_branch', 100);
+            $table -> char('branch_name', 100);
+            $table -> char('username_manager', 100);
+            $table -> text('address');
+            $table -> char('owner_name', 100);
+            $table -> char('phone_number', 100);
+            $table -> char('main_branch', 1);
+            $table -> char('status', 100); //open - closed
+            $table -> timestamps(); 
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class TblBranch extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_branch');
     }
 }
