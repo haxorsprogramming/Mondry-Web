@@ -16,11 +16,12 @@ class TblEmployee extends Migration
         Schema::create('tbl_employee', function (Blueprint $table) {
             $table -> id();
             $table -> char('username', 100);
+            $table -> char('role', 1);
             $table -> char('name', 100);
             $table -> char('address', 200) -> nullable();
             $table -> char('email', 200) -> nullable();
             $table -> char('phone_number', 200) -> nullable();
-            $table -> char('id_branch', 100); 
+            $table -> char('id_branch', 100) -> nullable(); 
             $table -> timestamps(); 
             $table -> char('active', 1);
         });

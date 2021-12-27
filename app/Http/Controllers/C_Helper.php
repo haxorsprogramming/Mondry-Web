@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Firebase\JWT\JWT;
 
+use App\Models\M_Role;
 use App\Models\M_Setting;
 
 class C_Helper extends Controller
@@ -22,5 +23,10 @@ class C_Helper extends Controller
     {
         $dataSetting = M_Setting::where('caps_setting', $capsSetting) -> first();
         return $dataSetting -> value;
+    }
+    
+    public function getDataRole()
+    {
+        return M_Role::all();
     }
 }

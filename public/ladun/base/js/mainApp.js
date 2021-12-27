@@ -1,5 +1,6 @@
 // route 
 var rDashboard = server + "app/dashboard";
+var rBranch = server + "app/branch";
 var rEmployee = server + "app/employee";
 // vue object
 var menuApp = new Vue({
@@ -12,7 +13,7 @@ var menuApp = new Vue({
         },
         branchAtc : function()
         {
-
+            load_page(rBranch, "Branch");
         },
         employeeAtc : function()
         {
@@ -39,4 +40,13 @@ async function load_page(page, page_title)
 
 function tidur_bentar(ms){
     return new Promise(resolve => { setTimeout(resolve, ms) });
+}
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
 }
