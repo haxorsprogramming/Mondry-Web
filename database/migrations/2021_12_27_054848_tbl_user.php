@@ -17,7 +17,7 @@ class TblUser extends Migration
             $table -> id();
             $table -> char('username', 50);
             $table -> char('role', 1);
-            $table -> char('password', 100);
+            $table -> char('password', 200);
             $table -> text('api_token') -> nullable();
             $table -> timestamps(); 
             $table -> char('active', 1);

@@ -13,7 +13,16 @@ class TblEmployee extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_employee', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('username', 100);
+            $table -> char('name', 100);
+            $table -> char('address', 200) -> nullable();
+            $table -> char('email', 200) -> nullable();
+            $table -> char('phone_number', 200) -> nullable(); 
+            $table -> timestamps(); 
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class TblEmployee extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_employee');
     }
 }
