@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Http\Controllers\C_Helper;
 
@@ -54,6 +55,7 @@ class C_Employee extends Controller
             $user -> password = password_hash($request -> password, PASSWORD_DEFAULT);
             $user -> active = "1";
             $user -> save();
+            $this -> helperCtr -> createTimeline("EMPLOYEE_CREATED", "Employee ".$username." created");
             $status = "SUCCESS";
         }else{
             $status = "DUPLICATE_USERNAME";
@@ -64,6 +66,10 @@ class C_Employee extends Controller
     }
     public function processDeleteEmployee(Request $request)
     {
+        $username = $request -> username;
+        M_Employee::where('username', $username) -> delete();
+        M_User::where('username', $username) -> delete();
+        $this -> helperCtr -> createTimeline("EMPLOYEE_DELETED", "Employee ".$username." deleted");
         $dr = ['status' => 'SUCCESS'];
         return \Response::json($dr);
     }

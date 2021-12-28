@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use App\Http\Controllers\C_Helper;
+
 use App\Models\M_Employee;
 use App\Models\M_Branch;
 
 class C_Branch extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(C_Helper $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
+
     public function branchPage()
     {
         $dataManager = M_Employee::where('role', '2') -> get();
@@ -32,10 +41,12 @@ class C_Branch extends Controller
         $branch -> status = "ACTIVE";
         $branch -> active = "1";
         $branch -> save();
+        $this -> helperCtr -> createTimeline("BRANCH_CREATED", "Branch ".$request -> name." created");
         // update employee status 
         M_Employee::where('username', $request -> manager) -> update([
             'id_branch' => $idBranch
         ]);
+        $this -> helperCtr -> createTimeline("EMPLOYEE_ASSIGN_TO_BRANCH", $request -> manager." just assign to branch ".$request -> name);
         $status = "SUCCESS";
         $dr = ['status' => $status];
         return \Response::json($dr);

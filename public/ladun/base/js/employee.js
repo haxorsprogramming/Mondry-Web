@@ -73,9 +73,11 @@ function setEmployeeName()
 
 function deleteConfirm(username)
 {
-    axios.post(rProsesDeleteEmployee).then(function(res){
+    let ds = {'username':username}
+    axios.post(rProsesDeleteEmployee, ds).then(function(res){
         let obj = res.data;
-        console.log(obj);
+        pesanUmumApp('success', 'Success', 'Success delete employe ...');
+        load_page(rEmployee, "Employee");
     });
 }
 

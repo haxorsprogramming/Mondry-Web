@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 use App\Models\M_Role;
 use App\Models\M_Setting;
+use App\Models\M_Timeline;
 
 class C_Helper extends Controller
 {
@@ -28,5 +30,17 @@ class C_Helper extends Controller
     public function getDataRole()
     {
         return M_Role::all();
+    }
+
+    public function createTimeline($event, $deks)
+    {
+        $dataLogin = $this -> getUserLoginData();
+
+        $timeline = New M_Timeline();
+        $timeline -> token = Str::uuid();
+        $timeline -> username = $dataLogin -> username;
+        $timeline -> event = $event;
+        $timeline -> deks = $deks;
+        $timeline -> save();
     }
 }
