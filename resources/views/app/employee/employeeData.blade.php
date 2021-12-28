@@ -1,5 +1,5 @@
 <!-- employee list  -->
-<div class="col-xl-12" id="divDataEmployee">
+<div class="col-xl-12" id="divDataEmployee" v-if="togDivDataBranch">
     <div class="card">
         <div class="card-header border-0 pb-0">
             <h5 class="card-title">List Employee</h5>

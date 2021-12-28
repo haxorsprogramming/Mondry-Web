@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="txtName" onkeyup="setEmployeeName()">
+                            <input type="text" class="form-control" placeholder="Name" id="txtName" ref="nameEmployee" onkeyup="setEmployeeName()">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Address</label>

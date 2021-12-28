@@ -6,12 +6,13 @@ var employeeApp = new Vue({
     data : {
         employeeName : '-',
         roleSelected : '-',
-        toogleBranch : false
+        toogleBranch : false,
+        togDivDataBranch : true
     },
     methods : {
         addEmployeeAtc : function()
         {
-            $("#divDataEmployee").hide();
+            employeeApp.togDivDataBranch = false;
             $("#divAddEmployee").show();
             document.querySelector("#txtName").focus();
         },
@@ -74,6 +75,11 @@ function setImg()
         let hasil = e.target.result;
         preview.src = hasil;
     }
+}
+
+function setFirstField()
+{
+    
 }
 
 tip('.btnEdit', 'Edit employee');
