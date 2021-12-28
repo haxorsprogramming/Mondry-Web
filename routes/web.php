@@ -22,3 +22,4 @@ Route::post('/app/branch/add/process', [C_Branch::class, 'processAddBranch']);
 // employee 
 Route::get('/app/employee', [C_Employee::class, 'employeePage']);
 Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee']);
+Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEmployee']);

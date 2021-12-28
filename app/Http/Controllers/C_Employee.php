@@ -33,22 +33,37 @@ class C_Employee extends Controller
     public function processAddEmployee(Request $request)
     {
         // save data employee 
-        $employee = new M_Employee();
-        $employee -> username = $request -> username;
-        $employee -> role = $request -> role;
-        $employee -> name = $request -> name;
-        $employee -> address = $request -> address;
-        $employee -> email = $request -> email;
-        $employee -> phone_number = $request -> phoneNumber;
-        $employee -> active = "1";
-        $employee -> save();
-        // save data user 
-        $user = new M_User();
-        $user -> username = $request -> username;
-        $user -> role = $request -> role;
-        $user -> password = password_hash($request -> password, PASSWORD_DEFAULT);
-        $user -> active = "1";
-        $user -> save();
+        $username = $request -> username;
+        $tUsername = M_User::where('username', $username) -> count();
+        if($tUsername < 1){
+            // cek for double username       
+            $employee = new M_Employee();
+            $employee -> username = $request -> username;
+            $employee -> role = $request -> role;
+            $employee -> name = $request -> name;
+            $employee -> address = $request -> address;
+            $employee -> email = $request -> email;
+            $employee -> phone_number = $request -> phoneNumber;
+            $employee -> id_branch = $request -> branch;
+            $employee -> active = "1";
+            $employee -> save();
+            // save data user 
+            $user = new M_User();
+            $user -> username = $request -> username;
+            $user -> role = $request -> role;
+            $user -> password = password_hash($request -> password, PASSWORD_DEFAULT);
+            $user -> active = "1";
+            $user -> save();
+            $status = "SUCCESS";
+        }else{
+            $status = "DUPLICATE_USERNAME";
+        }
+        
+        $dr = ['status' => $status];
+        return \Response::json($dr);
+    }
+    public function processDeleteEmployee(Request $request)
+    {
         $dr = ['status' => 'SUCCESS'];
         return \Response::json($dr);
     }

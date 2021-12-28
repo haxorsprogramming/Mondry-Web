@@ -1,5 +1,6 @@
 // route 
 var rProcessAddEmployee = server + "app/employee/add/process";
+var rProsesDeleteEmployee = server + "app/employee/delete/process";
 // vue object 
 var employeeApp = new Vue({
     el : '#divEmployee',
@@ -26,22 +27,40 @@ var employeeApp = new Vue({
             let email = document.querySelector("#txtEmail").value;
             let role = document.querySelector("#txtRole").value;
             let roleArr = role.split("|");
-
+            let branch = null;
             let imgPicData = document.querySelector("#txtPreviewUpload").getAttribute("src");
-            // if(name === ''){
-            //     pesanUmumApp('warning', 'Complete field !!!', 'Please complete all field !!!');
-            // }else{
+            
+            if(employeeApp.toogleBranch === true){
+                branch = document.querySelector("#txtBranch").value;
+            }
+            let ds = {
+                'name':name,
+                'address' : address,
+                'username':username,
+                'phoneNumber':phoneNumber,
+                'password':password,
+                'email':email,
+                'role':roleArr[0],
+                'branch':branch
+            }
 
-            // }
-            let ds = {'name':name, 'address' : address, 'username':username, 'phoneNumber':phoneNumber, 'password':password, 'email':email, 'role':roleArr[0]}
             axios.post(rProcessAddEmployee, ds).then(function(res){
                 let obj = res.data;
                 if(obj.status === 'SUCCESS'){
                     pesanUmumApp('success', 'Success', 'Success add new employee');
+                    load_page(rEmployee, "Employee");
                 }else{
-
+                    pesanUmumApp('warning', 'Error', 'Username already exist !!!');
                 }
             });
+        },
+        detailAtc : function(username)
+        {
+            
+        },
+        deleteAtc : function(username)
+        {
+            confirmQuest('info', 'Confirm', 'Delete employe?', function (x) {deleteConfirm(username)});
         }
     }
 });
@@ -50,6 +69,14 @@ function setEmployeeName()
 {
     let employeeName = document.querySelector("#txtName").value;
     employeeApp.employeeName = employeeName;
+}
+
+function deleteConfirm(username)
+{
+    axios.post(rProsesDeleteEmployee).then(function(res){
+        let obj = res.data;
+        console.log(obj);
+    });
 }
 
 function setRole()
@@ -82,5 +109,6 @@ function setFirstField()
     
 }
 
-tip('.btnEdit', 'Edit employee');
+tip('.btnDetail', 'Detail employee');
+tip('.btnDelete', 'Delete employee');
 // tippy('#btnEdit', {content: "Edit"});

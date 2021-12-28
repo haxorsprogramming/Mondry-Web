@@ -31,10 +31,10 @@
                             <td>{{ $employee -> branchData -> branch_name }}</td>
                             @endif
                             <td>
-                                <a class="btn btn-sm btn-success btnEdit">
-                                    <i class="material-icons">edit</i>
+                                <a class="btn btn-xs btn-success btnDetail" @click="detailAtc('{{ $employee -> username }}')">
+                                    <i class="material-icons">info</i>
                                 </a>
-                                <a class="btn btn-sm btn-warning">
+                                <a class="btn btn-xs btn-warning btnDelete" @click="deleteAtc('{{ $employee -> username }}')">
                                     <i class="material-icons">delete</i>
                                 </a>
                             </td>
