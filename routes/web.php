@@ -18,6 +18,7 @@ Route::get('/app', [C_Main_App::class, 'mainApp']);
 Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);
 // branch 
 Route::get('/app/branch', [C_Branch::class, 'branchPage']);
+Route::post('/app/branch/add/process', [C_Branch::class, 'processAddBranch']);
 // employee 
 Route::get('/app/employee', [C_Employee::class, 'employeePage']);
 Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee']);

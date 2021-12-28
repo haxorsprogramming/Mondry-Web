@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Branch Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="txtName">
+                            <input type="text" class="form-control" placeholder="Branch name" id="txtBranchName">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Address</label>
@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Owner Name</label>
-                            <input type="text" class="form-control" placeholder="Username for login" id="txtUsername">
+                            <input type="text" class="form-control" placeholder="Username for login" id="txtOwnerName">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Phone Number</label>
@@ -34,8 +34,8 @@
                         <div class="form-group col-md-6">
                             <label>Main Branch</label>
                             <select class="form-control" id="txtMainBranch">
-                                <option>Yes</option>
-                                <option>No</option>
+                                <option value="Y">Yes</option>
+                                <option value="N">No</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -57,12 +57,10 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">
 
-                    
-
                 </div>
             </div>
             <div>
-                <a class="btn btn-rounded btn-primary" href="javascript:void(0)">
+                <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="processAddBranchAtc()">
                     <span class="btn-icon-left text-success"><i class="material-icons">how_to_reg</i></span>Add new branch
                 </a>
             </div>

@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header border-0 pb-0">
             <h5 class="card-title">List Branch</h5>
-            <a class="btn btn-rounded btn-primary" @click="addEmployeeAtc()">
+            <a class="btn btn-rounded btn-primary" @click="addBranchAtc()">
                 <span class="btn-icon-left text-primary"><i class="material-icons">note_add</i></span>Add Branch
             </a>
         </div>

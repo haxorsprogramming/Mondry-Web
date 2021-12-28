@@ -2,10 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class M_Branch extends Model
 {
-    use HasFactory;
+    protected $table = "tbl_branch";
+
+    protected $fillable = [
+        'id_branch',
+        'branch_name',
+        'username_manager',
+        'address',
+        'owner_name',
+        'phone_number',
+        'main_branch',
+        'status',
+        'active'
+    ];
 }
