@@ -24,4 +24,9 @@ class M_Employee extends Model
         return $this->belongsTo(M_Role::class, 'role', 'kd_role');
     }
 
+    public function branchData()
+    {
+        return $this->belongsTo(M_Branch::class, 'id_branch', 'id_branch');
+    }
+
 }

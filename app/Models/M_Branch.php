@@ -19,4 +19,10 @@ class M_Branch extends Model
         'status',
         'active'
     ];
+
+    public function employeeData()
+    {
+        return $this->belongsTo(M_Employee::class, 'username_manager', 'username');
+    }
+
 }

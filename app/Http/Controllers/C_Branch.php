@@ -13,15 +13,16 @@ class C_Branch extends Controller
     public function branchPage()
     {
         $dataManager = M_Employee::where('role', '2') -> get();
-        $dr = ['dataManager' => $dataManager];
+        $dataBranch = M_Branch::all();
+        $dr = ['dataManager' => $dataManager, 'dataBranch' => $dataBranch];
         return view('app.branch.branchPage', $dr);
     }
     public function processAddBranch(Request $request)
     {
-        // {'name':name, 'address':address, 'owner':owner, 
-            // 'phone':phone, 'main':main, 'manager':manager}
+        $idBranch = Str::uuid();
+        // save branch data 
         $branch = new M_Branch();
-        $branch -> id_branch = Str::uuid();
+        $branch -> id_branch = $idBranch;
         $branch -> branch_name = $request -> name;
         $branch -> username_manager = $request -> manager;
         $branch -> address = $request -> address;
@@ -31,6 +32,10 @@ class C_Branch extends Controller
         $branch -> status = "ACTIVE";
         $branch -> active = "1";
         $branch -> save();
+        // update employee status 
+        M_Employee::where('username', $request -> manager) -> update([
+            'id_branch' => $idBranch
+        ]);
         $status = "SUCCESS";
         $dr = ['status' => $status];
         return \Response::json($dr);

@@ -21,13 +21,17 @@ class C_Employee extends Controller
     public function employeePage()
     {
         $dataRole = $this -> helperCtr -> getDataRole();
+        $dataBranch = M_Branch::all();
         $dataEmployee = M_Employee::all();
-        $dr = ['role' => $dataRole, 'dataEmployee' => $dataEmployee];
+        $dr = [
+            'role' => $dataRole,
+            'dataEmployee' => $dataEmployee,
+            'dataBranch' => $dataBranch
+        ];
         return view('app.employee.employeePage', $dr);
     }
     public function processAddEmployee(Request $request)
     {
-        // {'name':name, 'address' : address, 'username':username, 'phoneNumber':phoneNumber, 'password':password, 'email':email, 'role':role}
         // save data employee 
         $employee = new M_Employee();
         $employee -> username = $request -> username;

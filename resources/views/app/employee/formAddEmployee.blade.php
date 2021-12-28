@@ -50,7 +50,15 @@
                                 @endforeach
                             </select>
                         </div>
-
+                        <div class="form-group col-md6" v-if="toogleBranch">
+                            <label>Branch</label>
+                            <select class="form-control">
+                                <option>--- Choose branch ---</option>
+                                @foreach($dataBranch as $branch)
+                                <option value="{{ $branch -> id_branch }}">{{ $branch -> branch_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-12">

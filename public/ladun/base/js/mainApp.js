@@ -50,3 +50,8 @@ function pesanUmumApp(icon, title, text)
     text : text
   });
 }
+
+function tip(element, isi)
+{
+    tippy(element, {content: isi});
+}

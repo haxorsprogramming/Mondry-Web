@@ -20,6 +20,18 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach($dataBranch as $branch)
+                        <tr>
+                            <td>{{ $loop -> iteration }}</td>
+                            <td>{{ $branch -> branch_name }}</td>
+                            <td>{{ $branch -> address }}</td>
+                            <td>{{ $branch -> employeeData -> name }}</td>
+                            <td>{{ $branch -> status }}</td>
+                            <td></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
 

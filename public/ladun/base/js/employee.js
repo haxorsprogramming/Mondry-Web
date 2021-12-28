@@ -5,7 +5,8 @@ var employeeApp = new Vue({
     el : '#divEmployee',
     data : {
         employeeName : '-',
-        roleSelected : '-'
+        roleSelected : '-',
+        toogleBranch : false
     },
     methods : {
         addEmployeeAtc : function()
@@ -55,6 +56,12 @@ function setRole()
     let role = document.querySelector("#txtRole").value;
     let roleArr = role.split("|");
     employeeApp.roleSelected = roleArr[1];
+    if(roleArr[0] === "1" || roleArr[0] === "2" || role === "none"){
+        employeeApp.toogleBranch = false;
+    }else{
+        employeeApp.toogleBranch = true;
+    }
+
 }
 
 function setImg()
@@ -68,3 +75,6 @@ function setImg()
         preview.src = hasil;
     }
 }
+
+tip('.btnEdit', 'Edit employee');
+// tippy('#btnEdit', {content: "Edit"});

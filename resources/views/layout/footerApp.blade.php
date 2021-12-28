@@ -23,6 +23,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <!-- datatable  -->
 <script src="{{ asset('/ladun/lib/acara') }}/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<!-- tippy  -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 <!-- Dashboard 1 -->
 <script>
     const server = "{{ url('') }}/";

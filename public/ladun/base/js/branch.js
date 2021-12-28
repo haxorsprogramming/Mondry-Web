@@ -24,7 +24,12 @@ var appBranch = new Vue({
             let ds = {'name':name, 'address':address, 'owner':owner, 'phone':phone, 'main':main, 'manager':manager}
             axios.post(rProsesAddBranch, ds).then(function(res){
                 let obj = res.data;
-                console.log(obj);
+                if(obj.status === 'SUCCESS'){
+                    pesanUmumApp('success', 'Success', 'Success add new branch');
+                    load_page(rBranch, "Branch");
+                }else{
+
+                }
             });
         }
     }

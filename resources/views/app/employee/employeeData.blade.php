@@ -26,12 +26,17 @@
                             <td>{{ $employee -> name }}</td>
                             <td>{{ $employee -> roleData -> role_name }}</td>
                             @if($employee -> id_branch == NULL)
-                            <td><small>Not set yet</small></td>
+                            <td><small class="text-muted">Not set yet</small></td>
                             @else
-                            <td>{{ $employee -> id_branch }}</td>
+                            <td>{{ $employee -> branchData -> branch_name }}</td>
                             @endif
                             <td>
-                                
+                                <a class="btn btn-sm btn-success btnEdit">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a class="btn btn-sm btn-warning">
+                                    <i class="material-icons">delete</i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
@@ -60,8 +65,7 @@
             </nav>
         </div>
         <div class="card-footer border-0 pt-0">
-            
+
         </div>
     </div>
 </div>
-
