@@ -7,7 +7,7 @@ use App\Http\Controllers\C_Auth;
 use App\Http\Controllers\C_Main_App;
 use App\Http\Controllers\C_Branch;
 use App\Http\Controllers\C_Employee;
-
+use App\Http\Controllers\C_Service_Item;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -24,3 +24,5 @@ Route::post('/app/branch/add/process', [C_Branch::class, 'processAddBranch']);
 Route::get('/app/employee', [C_Employee::class, 'employeePage']);
 Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee']);
 Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEmployee']);
+// service item 
+Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
