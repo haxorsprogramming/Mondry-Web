@@ -43,4 +43,10 @@ class C_Helper extends Controller
         $timeline -> deks = $deks;
         $timeline -> save();
     }
+
+    public function getRoleName($kdRole)
+    {
+        $roleData = M_Role::where('kd_role', $kdRole) -> first();
+        return $roleData -> role_name;
+    }
 }

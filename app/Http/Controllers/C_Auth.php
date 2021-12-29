@@ -63,7 +63,7 @@ class C_Auth extends Controller
     { 
         setcookie("MONDRY_TOKEN", "", time() - 3600);
         $request -> session() -> flush();
-        return redirect('/');
+        return redirect('/login');
     }
 
 }

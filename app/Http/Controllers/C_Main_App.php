@@ -19,7 +19,15 @@ class C_Main_App extends Controller
     public function mainApp()
     {
         $appName = $this -> helperCtr -> getSetting('APP_NAME');
-        $dr = ['pageTitle' => 'Dashboard Page', 'page' => 'mainApp', 'appName' => $appName];
+        $userData = $this -> helperCtr -> getUserLoginData();
+        $role = $this -> helperCtr -> getRoleName($userData -> role);
+        $dr = [
+            'pageTitle' => 'Dashboard Page',
+            'page' => 'mainApp',
+            'appName' => $appName,
+            'userLogin' => $userData -> username,
+            'role' => $role
+        ];
         return view('app.mainApp', $dr);
     }
 
