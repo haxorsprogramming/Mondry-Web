@@ -13,6 +13,7 @@ Route::get('/', [C_Home::class, 'homePage']);
 // auth 
 Route::get('/login', [C_Auth::class, 'loginPage']);
 Route::post('/auth/login/process', [C_Auth::class, 'loginProcess']);
+Route::get('/logout', [C_Auth::class, 'logout']);
 // main app 
 Route::get('/app', [C_Main_App::class, 'mainApp']);
 Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);

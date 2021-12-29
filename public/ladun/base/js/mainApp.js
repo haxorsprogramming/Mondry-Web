@@ -2,6 +2,7 @@
 var rDashboard = server + "app/dashboard";
 var rBranch = server + "app/branch";
 var rEmployee = server + "app/employee";
+var rLogOut = server + "logout";
 // vue object
 var menuApp = new Vue({
     el: "#divMenu",
@@ -18,6 +19,11 @@ var menuApp = new Vue({
         employeeAtc : function()
         {
             load_page(rEmployee, "Employee");
+        },
+        logOutAtc : function()
+        {
+            document.cookie = "MONDRY_TOKEN=";
+            window.location.assign(rLogOut);
         }
     },
 });

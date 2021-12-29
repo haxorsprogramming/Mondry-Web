@@ -59,4 +59,11 @@ class C_Auth extends Controller
         return \Response::json($dr);
     }
 
+    public function logout(Request $request)
+    { 
+        setcookie("MONDRY_TOKEN", "", time() - 3600);
+        $request -> session() -> flush();
+        return redirect('/');
+    }
+
 }

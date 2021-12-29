@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header border-0 pb-0">
             <h5 class="card-title">Add Employee</h5>
-            <a class="btn btn-rounded btn-dark">
+            <a class="btn btn-rounded btn-dark" @click="backAtc()">
                 <span class="btn-icon-left text-dark"><i class="material-icons">arrow_back</i></span>Back
             </a>
         </div>

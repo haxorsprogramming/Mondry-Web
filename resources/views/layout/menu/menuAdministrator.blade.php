@@ -38,7 +38,7 @@
                 </a>
             </li>
             <!-- logout  -->
-            <li><a href="#!" class="ai-icon" aria-expanded="false">
+            <li><a href="javascript:void(0)" class="ai-icon" aria-expanded="false" @click="logOutAtc()">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Logout</span>
                 </a>

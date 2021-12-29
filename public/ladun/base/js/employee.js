@@ -17,6 +17,11 @@ var employeeApp = new Vue({
             $("#divAddEmployee").show();
             document.querySelector("#txtName").focus();
         },
+        backAtc : function()
+        {
+            employeeApp.togDivDataBranch = true;
+            $("#divAddEmployee").hide();
+        },
         addNewEmployeeProcessAtc : function()
         {
             let name = document.querySelector("#txtName").value;
