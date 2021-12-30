@@ -26,3 +26,4 @@ Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee
 Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEmployee']);
 // service item 
 Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
+Route::post('/app/service-item/add/process', [C_Service_Item::class, 'processAddServiceItem']);

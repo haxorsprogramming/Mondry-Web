@@ -14,8 +14,8 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
-                            <th>Role</th>
-                            <th>Branch</th>
+                            <th>Type / Unit</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
