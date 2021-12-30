@@ -29,3 +29,6 @@ var appItem = new Vue({
         }
     }
 });
+
+// inisialisasi 
+$("#tblServiceItem").dataTable();

@@ -31,3 +31,5 @@ Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
 Route::post('/app/service-item/add/process', [C_Service_Item::class, 'processAddServiceItem']);
 // raw material 
 Route::get('/app/raw-material', [C_Raw_Material::class, 'rawMaterialPage']);
+Route::post('/app/raw-material/add/process', [C_Raw_Material::class, 'processAddRawMaterial']);
+Route::post('/app/raw-material/delete/process', [C_Raw_Material::class, 'procesDeleteRawMaterial']);

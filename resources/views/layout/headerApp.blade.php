@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="{{ asset('/ladun/lib/acara') }}/vendor/chartist/css/chartist.min.css">
     <link href="{{ asset('/ladun/lib/acara') }}/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="{{ asset('/ladun/lib/acara') }}/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/YuResto/ladun/dataTable/jquery.dataTables.min.css" rel="stylesheet">
     <link href="{{ asset('/ladun/lib/acara') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('/ladun/base/css') }}/nprogress.css" rel="stylesheet">
     <!-- Datatable -->
-    <link href="{{ asset('/ladun/lib/acara') }}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
