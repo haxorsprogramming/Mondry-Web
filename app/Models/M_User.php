@@ -19,4 +19,9 @@ class M_User extends Model
         'active'
     ];
 
+    public function branchData()
+    {
+        return $this->belongsTo(M_Branch::class, 'id_branch', 'id_branch');
+    }
+
 }

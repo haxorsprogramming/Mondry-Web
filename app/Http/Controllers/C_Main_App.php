@@ -21,12 +21,14 @@ class C_Main_App extends Controller
         $appName = $this -> helperCtr -> getSetting('APP_NAME');
         $userData = $this -> helperCtr -> getUserLoginData();
         $role = $this -> helperCtr -> getRoleName($userData -> role);
+        $branch = $this -> helperCtr -> getBranchData();
         $dr = [
             'pageTitle' => 'Dashboard Page',
             'page' => 'mainApp',
             'appName' => $appName,
             'userLogin' => $userData -> username,
-            'role' => $role
+            'role' => $role,
+            'branchData' => $branch
         ];
         return view('app.mainApp', $dr);
     }

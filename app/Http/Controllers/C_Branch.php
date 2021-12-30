@@ -9,6 +9,7 @@ use App\Http\Controllers\C_Helper;
 
 use App\Models\M_Employee;
 use App\Models\M_Branch;
+use App\Models\M_User;
 
 class C_Branch extends Controller
 {
@@ -44,6 +45,9 @@ class C_Branch extends Controller
         $this -> helperCtr -> createTimeline("BRANCH_CREATED", "Branch ".$request -> name." created");
         // update employee status 
         M_Employee::where('username', $request -> manager) -> update([
+            'id_branch' => $idBranch
+        ]);
+        M_User::where('username', $request -> manager) -> update([
             'id_branch' => $idBranch
         ]);
         $this -> helperCtr -> createTimeline("EMPLOYEE_ASSIGN_TO_BRANCH", $request -> manager." just assign to branch ".$request -> name);

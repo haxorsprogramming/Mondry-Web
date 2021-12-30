@@ -55,7 +55,7 @@
             </li>
         </ul>
         <div class="copyright">
-            <p>Welcome, <br /><b>{{ $userLogin }} ({{ $role }})</b></p>
+            <p>Welcome, <br /><b>{{ $userLogin }} ({{ $role }})</b><br/>{{ $branchData -> branch_name }}</p>
             <p><strong>Mondry</strong> Laundry Management App <br />© 2021 All Rights Reserved</p>
             <p>Developer By <span class="heart"></span> NadhaMedia</p>
         </div>

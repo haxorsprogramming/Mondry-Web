@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_Branch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Firebase\JWT\JWT;
@@ -10,6 +11,7 @@ use Firebase\JWT\Key;
 use App\Models\M_Role;
 use App\Models\M_Setting;
 use App\Models\M_Timeline;
+use App\Models\M_User;
 
 class C_Helper extends Controller
 {
@@ -48,5 +50,13 @@ class C_Helper extends Controller
     {
         $roleData = M_Role::where('kd_role', $kdRole) -> first();
         return $roleData -> role_name;
+    }
+
+    public function getBranchData()
+    {
+        $dataLogin = $this -> getUserLoginData();
+        $username = $dataLogin -> username;
+        $dataUser = M_User::where('username', $username) -> first();
+        return $dataUser -> branchData;
     }
 }
