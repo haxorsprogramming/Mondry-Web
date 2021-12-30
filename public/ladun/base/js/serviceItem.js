@@ -23,7 +23,8 @@ var appItem = new Vue({
             let ds = {'itemName':itemName, 'deks':deks, 'unit':unit, 'type':type, 'price':price}
             axios.post(rProcessAddServiceItem, ds).then(function(res){
                 let obj = res.data;
-                console.log(obj);
+                pesanUmumApp('success', 'Success', 'Success add new service item ...');
+                load_page(rServiceItem, "Service Item");
             });
         }
     }

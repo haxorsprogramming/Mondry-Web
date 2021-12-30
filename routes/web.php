@@ -8,6 +8,8 @@ use App\Http\Controllers\C_Main_App;
 use App\Http\Controllers\C_Branch;
 use App\Http\Controllers\C_Employee;
 use App\Http\Controllers\C_Service_Item;
+use App\Http\Controllers\C_Raw_Material;
+
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -27,3 +29,5 @@ Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEm
 // service item 
 Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
 Route::post('/app/service-item/add/process', [C_Service_Item::class, 'processAddServiceItem']);
+// raw material 
+Route::get('/app/raw-material', [C_Raw_Material::class, 'rawMaterialPage']);

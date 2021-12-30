@@ -52,6 +52,7 @@ class C_Employee extends Controller
             $user = new M_User();
             $user -> username = $request -> username;
             $user -> role = $request -> role;
+            $user -> id_branch = $request -> branch;
             $user -> password = password_hash($request -> password, PASSWORD_DEFAULT);
             $user -> active = "1";
             $user -> save();

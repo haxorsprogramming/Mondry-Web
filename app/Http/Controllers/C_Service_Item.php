@@ -20,13 +20,14 @@ class C_Service_Item extends Controller
 
     public function serviceItemPage()
     {
-        return view('app.serviceItem.serviceItemPage');
+        $dataIServiceItem = M_Service_Item::all();
+        $dr = ['dataItem' => $dataIServiceItem];
+        return view('app.serviceItem.serviceItemPage', $dr);
     }
     public function processAddServiceItem(Request $request)
     {
         // {'itemName':itemName, 'deks':deks, 'unit':unit, 'type':type, 'price':price}
         $branchData = $this -> helperCtr -> getBranchData();
-
         $idItem = Str::uuid();
         $si = new M_Service_Item();
         $si -> id_item = $idItem;

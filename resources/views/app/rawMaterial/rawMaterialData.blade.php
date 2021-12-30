@@ -1,10 +1,10 @@
-<!-- service item list  -->
-<div class="col-xl-12" id="divDataServiceItem" v-if="togDivDataItem">
+<!-- raw material list  -->
+<div class="col-xl-12" id="divDataRawMaterial" v-if="togDivDataItem">
     <div class="card">
         <div class="card-header border-0 pb-0">
-            <h5 class="card-title">List Service Item</h5>
-            <a class="btn btn-rounded btn-primary" @click="addItemAtc()">
-                <span class="btn-icon-left text-primary"><i class="material-icons">note_add</i></span>Add Item
+            <h5 class="card-title">List Raw Material</h5>
+            <a class="btn btn-rounded btn-primary">
+                <span class="btn-icon-left text-primary"><i class="material-icons">note_add</i></span>Add Raw Material
             </a>
         </div>
         <div class="card-body">
@@ -15,23 +15,10 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Desc</th>
-                            <th>Type / Unit</th>
-                            <th>Price</th>
+                            <th>Stock</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach($dataItem as $item)
-                        <tr>
-                            <td>{{ $loop -> iteration }}</td>
-                            <td>{{ $item -> name }}</td>
-                            <td>{{ $item -> deks }}</td>
-                            <td>{{ $item ->  unit}}</td>
-                            <td>Rp. {{ number_format($item -> price_at) }}</td>
-                            <td></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
                 </table>
             </div>
 

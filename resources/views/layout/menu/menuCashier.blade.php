@@ -1,6 +1,6 @@
 <div class="deznav" id="divMenu">
     <div class="deznav-scroll">
-        <!-- <a href="javascript:void(0)" class="add-menu-sidebar" data-toggle="modal" data-target="#addOrderModalside">+ New Laundry</a> -->
+        <a href="javascript:void(0)" class="add-menu-sidebar" data-toggle="modal" data-target="#addOrderModalside">+ New Laundry</a>
         <ul class="metismenu" id="menu">
             <!-- dashboard  -->
             <li>
@@ -12,8 +12,15 @@
             <!-- monitor laundry  -->
             <li>
                 <a href="#!" class="ai-icon" aria-expanded="false">
-                    <i class="material-icons">hub</i>
-                    <span class="nav-text">Monitor Laundry</span>
+                    <i class="material-icons">sticky_note_2</i>
+                    <span class="nav-text">Laundry Card</span>
+                </a>
+            </li>
+            <!-- monitor laundry  -->
+            <li>
+                <a href="#!" class="ai-icon" aria-expanded="false">
+                    <i class="material-icons">wysiwyg</i>
+                    <span class="nav-text">Laundry Room</span>
                 </a>
             </li>
             <!-- data master  -->
@@ -23,7 +30,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="javascript:void(0)" @click="serviceItemAtc()">Service Item</a></li>
-                    <li><a href="javascript:void(0)" @click="rawMaterialAtc()">Raw Material</a></li>
+                    <li><a href="javascript:void(0)">Raw Material</a></li>
                     <li><a href="javascript:void(0)">Customer</a></li>
                 </ul>
             </li>
@@ -37,7 +44,6 @@
                     <li><a href="javascript:void(0)">Cash Flow</a></li>
                     <li><a href="javascript:void(0)">Income</a></li>
                     <li><a href="javascript:void(0)">Expenditure</a></li>
-                    <li><a href="javascript:void(0)">Statistics Laundry</a></li>
                 </ul>
             </li>
             <!-- setting  -->
