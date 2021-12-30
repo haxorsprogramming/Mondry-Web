@@ -20,7 +20,8 @@ class C_Service_Item extends Controller
 
     public function serviceItemPage()
     {
-        $dataIServiceItem = M_Service_Item::all();
+        $branchData = $this -> helperCtr -> getBranchData();
+        $dataIServiceItem = M_Service_Item::where('id_branch', $branchData -> id_branch) -> get();
         $dr = ['dataItem' => $dataIServiceItem];
         return view('app.serviceItem.serviceItemPage', $dr);
     }
@@ -39,6 +40,14 @@ class C_Service_Item extends Controller
         $si -> price_at = $request -> price;
         $si -> active = "1";
         $si -> save();
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+    public function processDeleteServiceItem(Request $request)
+    {
+        // {'idItem':idItem}
+        $idItem = $request -> idItem;
+        M_Service_Item::where('id_item', $idItem) -> delete();
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

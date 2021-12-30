@@ -21,7 +21,8 @@ class C_Raw_Material extends Controller
 
     public function rawMaterialPage()
     {
-        $dataMaterial = M_Raw_Material::all();
+        $branchData = $this -> helperCtr -> getBranchData();
+        $dataMaterial = M_Raw_Material::where('id_branch', $branchData -> id_branch) -> get();
         $dr = ['dataRaw' => $dataMaterial];
         return view('app.rawMaterial.rawMaterialPage', $dr);
     }
@@ -44,11 +45,32 @@ class C_Raw_Material extends Controller
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
-    public function procesDeleteRawMaterial(Request $request)
+    public function processDeleteRawMaterial(Request $request)
     {
         // {'idRaw':idRaw}
         $idRaw = $request -> idRaw;
         M_Raw_Material::where('id_raw', $idRaw) -> delete();
+        $this -> helperCtr -> createTimeline("RAW_MATERIAL_DELETE", "Raw material deleted");
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
+    public function editRawMaterialPage(Request $request, $idRaw)
+    {
+        $dataRaw = M_Raw_Material::where('id_raw', $idRaw) -> first();
+        $dr = ['dataRaw' => $dataRaw];
+        return view('app.rawMaterial.formEditRawMaterial', $dr);    
+    }
+    public function processsUpdateRawMaterial(Request $request)
+    {
+        // {'name':name, 'deks':deks, 'unit':unit, 'stock':stock}
+        $idRaw = $request -> idRaw;
+        M_Raw_Material::where('id_raw', $idRaw) -> update([
+            'raw_name' => $request -> name,
+            'unit' => $request -> unit,
+            'deks' => $request -> deks,
+            'stock' => $request -> stock,
+        ]);
+        $this -> helperCtr -> createTimeline("RAW_MATERIAL_UPDATE", "Raw material update");
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }

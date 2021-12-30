@@ -28,8 +28,12 @@ Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee
 Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEmployee']);
 // service item 
 Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
+
 Route::post('/app/service-item/add/process', [C_Service_Item::class, 'processAddServiceItem']);
+Route::post('/app/service-item/delete/process', [C_Service_Item::class, 'processDeleteServiceItem']);
 // raw material 
 Route::get('/app/raw-material', [C_Raw_Material::class, 'rawMaterialPage']);
+Route::get('/app/raw-material/{idRaw}/edit', [C_Raw_Material::class, 'editRawMaterialPage']);
 Route::post('/app/raw-material/add/process', [C_Raw_Material::class, 'processAddRawMaterial']);
-Route::post('/app/raw-material/delete/process', [C_Raw_Material::class, 'procesDeleteRawMaterial']);
+Route::post('/app/raw-material/delete/process', [C_Raw_Material::class, 'processDeleteRawMaterial']);
+Route::post('/app/raw-material/edit/process', [C_Raw_Material::class, 'processsUpdateRawMaterial']);

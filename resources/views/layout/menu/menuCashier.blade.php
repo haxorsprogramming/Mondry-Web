@@ -30,7 +30,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="javascript:void(0)" @click="serviceItemAtc()">Service Item</a></li>
-                    <li><a href="javascript:void(0)">Raw Material</a></li>
+                    <li><a href="javascript:void(0)" @click="rawMaterialAtc()">Raw Material</a></li>
                     <li><a href="javascript:void(0)">Customer</a></li>
                 </ul>
             </li>

@@ -28,7 +28,11 @@
                             <td>{{ $item -> deks }}</td>
                             <td>{{ $item ->  unit}}</td>
                             <td>Rp. {{ number_format($item -> price_at) }}</td>
-                            <td></td>
+                            <td>
+                                <a class="btn btn-xs btn-warning btnDelete" @click="deleteAtc('{{ $item -> id_item }}')">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

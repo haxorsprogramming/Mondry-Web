@@ -22,7 +22,7 @@ class C_Branch extends Controller
 
     public function branchPage()
     {
-        $dataManager = M_Employee::where('role', '2') -> get();
+        $dataManager = M_Employee::where('role', '2') -> where('id_branch', NULL) -> get();
         $dataBranch = M_Branch::all();
         $dr = ['dataManager' => $dataManager, 'dataBranch' => $dataBranch];
         return view('app.branch.branchPage', $dr);

@@ -21,12 +21,18 @@ var appRaw = new Vue({
         deleteAtc : function(idRaw)
         {
             confirmQuest('info', 'Confirm', 'Delete raw material ...?', function (x) {deleteConfirm(idRaw)});
+        },
+        editAtc : function(idRaw)
+        {
+            var rToEditRawMaterial = server + "app/raw-material/"+idRaw+"/edit";
+            load_page(rToEditRawMaterial, "Edit Raw Material");
         }
     }
 });
 // inisialisasi 
 $("#tblRaw").dataTable();
 tip(".btnDelete", "Delete");
+tip(".btnEdit", "Edit");
 
 function deleteConfirm(idRaw)
 {

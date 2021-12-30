@@ -27,6 +27,9 @@
                         <td>{{ $raw -> deks }}</td>
                         <td>{{ $raw -> stock }}</td>
                         <td>
+                            <a class="btn btn-xs btn-primary btnEdit" @click="editAtc('{{ $raw -> id_raw }}')">
+                                <i class="material-icons">edit_note</i>
+                            </a>
                             <a class="btn btn-xs btn-warning btnDelete" @click="deleteAtc('{{ $raw -> id_raw }}')">
                                 <i class="material-icons">delete</i>
                             </a>
