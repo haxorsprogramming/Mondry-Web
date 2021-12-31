@@ -28,7 +28,7 @@
                             <td>{{ $cus -> phone_number }}</td>
                             <td>
                                 <a class="btn btn-xs btn-primary btnDetail">
-                                    <i class="material-icons">edit_note</i>
+                                    <i class="material-icons">info</i>
                                 </a>
                                 <a class="btn btn-xs btn-warning btnDelete" @click="deleteAtc('{{ $cus -> id_customer }}')">
                                     <i class="material-icons">delete</i>

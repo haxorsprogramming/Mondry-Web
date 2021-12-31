@@ -22,10 +22,12 @@
 <!-- nprogress  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <!-- datatable  -->
-<script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/YuResto/ladun/dataTable/jquery.dataTables.min.js"></script>
+<script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/dataTable/jquery.dataTables.min.js"></script>
 <!-- tippy  -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
+<!-- select 2  -->
+<script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/select2/select2.full.min.js"></script>
 <!-- Dashboard 1 -->
 <script>
     const server = "{{ url('') }}/";

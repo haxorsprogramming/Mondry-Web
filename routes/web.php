@@ -10,6 +10,7 @@ use App\Http\Controllers\C_Employee;
 use App\Http\Controllers\C_Service_Item;
 use App\Http\Controllers\C_Raw_Material;
 use App\Http\Controllers\C_Customer;
+use App\Http\Controllers\C_Laundry_Card;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -40,3 +41,5 @@ Route::post('/app/raw-material/edit/process', [C_Raw_Material::class, 'processsU
 Route::get('/app/customer', [C_Customer::class, 'customerPage']);
 Route::post('/app/customer/add/process', [C_Customer::class, 'processAddCustomer']);
 Route::post('/app/customer/delete/process', [C_Customer::class, 'processDeleteCustomer']);
+// laundry card 
+Route::get('/app/laundry-card/new', [C_Laundry_Card::class, 'newLaundryCard']);

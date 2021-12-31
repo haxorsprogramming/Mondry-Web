@@ -1,6 +1,6 @@
 <div class="deznav" id="divMenu">
     <div class="deznav-scroll">
-        <a href="javascript:void(0)" class="add-menu-sidebar" data-toggle="modal" data-target="#addOrderModalside">+ New Laundry</a>
+        <a href="javascript:void(0)" @click="newLaundryAtc()" class="add-menu-sidebar">+ New Laundry</a>
         <ul class="metismenu" id="menu">
             <!-- dashboard  -->
             <li>
