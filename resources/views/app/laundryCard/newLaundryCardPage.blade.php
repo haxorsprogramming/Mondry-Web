@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Customer</label>
-                            <select id="single-select" class="form-control">
+                            <select id="txtCustomer" class="form-control" onchange="setCustomer()">
                                 <option value="none">--- Choose Customer ---</option>
                                 @foreach($cusData as $cus)
                                 <option value="{{ $cus -> id_customer }}">{{ $cus -> name }}</option>
@@ -50,11 +50,11 @@
                                         <td>@{{ id.itemName }}</td>
                                         <td>Rp. @{{ Number(id.priceAt).toLocaleString() }}</td>
                                         <td>
-                                            <input type="number" class="form-control" maxlength="5"/>
+                                            <input type="number" class="form-control" maxlength="5" v-on:keyup="setPrice(id.idItem)" v-bind:id="'qt_'+id.idItem"/>
                                         </td>
                                         <td>Rp. @{{ Number(id.total).toLocaleString() }}</td>
                                         <td>
-
+                                            <a href="javascript:void(0)" class="btn btn-sm btn-warning btnDelete" @click='deleteItem(id.idItem)'>Delete</a>
                                         </td>
                                     </tr>
                                 </tbody>
