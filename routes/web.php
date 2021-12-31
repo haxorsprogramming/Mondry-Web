@@ -38,3 +38,5 @@ Route::post('/app/raw-material/delete/process', [C_Raw_Material::class, 'process
 Route::post('/app/raw-material/edit/process', [C_Raw_Material::class, 'processsUpdateRawMaterial']);
 // customer 
 Route::get('/app/customer', [C_Customer::class, 'customerPage']);
+Route::post('/app/customer/add/process', [C_Customer::class, 'processAddCustomer']);
+Route::post('/app/customer/delete/process', [C_Customer::class, 'processDeleteCustomer']);

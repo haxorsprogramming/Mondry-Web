@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tblCustomer" class="table table-hover">
+                <table id="tblCustomer" class="table">
                     <thead>
                         <tr style="background-color: #dfe6e9;">
                             <th>No</th>
@@ -20,6 +20,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($cusData as $cus)
+                        <tr>
+                            <td>{{ $loop -> iteration }}</td>
+                            <td>{{ $cus -> name }}</td>
+                            <td>{{ $cus -> address }}</td>
+                            <td>{{ $cus -> phone_number }}</td>
+                            <td>
+                                <a class="btn btn-xs btn-primary btnDetail">
+                                    <i class="material-icons">edit_note</i>
+                                </a>
+                                <a class="btn btn-xs btn-warning btnDelete" @click="deleteAtc('{{ $cus -> id_customer }}')">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

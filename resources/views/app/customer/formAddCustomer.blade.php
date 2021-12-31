@@ -13,21 +13,21 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Customer Name</label>
-                            <input type="text" class="form-control" placeholder="Item Name" id="txtName">
+                            <input type="text" class="form-control" placeholder="Customer Name" id="txtName">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Address</label>
-                            <textarea class="form-control" style="resize: none;" placeholder="Description" id="txtAddress"></textarea>
+                            <textarea class="form-control" style="resize: none;" placeholder="Address" id="txtAddress"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Email</label>
-                            <input type="text" class="form-control" placeholder="Item Name" id="txtEmail">
+                            <input type="text" class="form-control" placeholder="Email" id="txtEmail">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Item Name" id="txtPhoneNumber">
+                            <input type="text" class="form-control" placeholder="Phone Number" id="txtPhoneNumber">
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div>
-                <a class="btn btn-rounded btn-primary" href="javascript:void(0)">
+                <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="processAddNewCustomerAtc()">
                     <span class="btn-icon-left text-success"><i class="material-icons">add_task</i></span>Add new customer
                 </a>
             </div>
