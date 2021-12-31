@@ -9,7 +9,7 @@ use App\Http\Controllers\C_Branch;
 use App\Http\Controllers\C_Employee;
 use App\Http\Controllers\C_Service_Item;
 use App\Http\Controllers\C_Raw_Material;
-
+use App\Http\Controllers\C_Customer;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -28,7 +28,6 @@ Route::post('/app/employee/add/process', [C_Employee::class, 'processAddEmployee
 Route::post('/app/employee/delete/process', [C_Employee::class, 'processDeleteEmployee']);
 // service item 
 Route::get('/app/service-item', [C_Service_Item::class, 'serviceItemPage']);
-
 Route::post('/app/service-item/add/process', [C_Service_Item::class, 'processAddServiceItem']);
 Route::post('/app/service-item/delete/process', [C_Service_Item::class, 'processDeleteServiceItem']);
 // raw material 
@@ -37,3 +36,5 @@ Route::get('/app/raw-material/{idRaw}/edit', [C_Raw_Material::class, 'editRawMat
 Route::post('/app/raw-material/add/process', [C_Raw_Material::class, 'processAddRawMaterial']);
 Route::post('/app/raw-material/delete/process', [C_Raw_Material::class, 'processDeleteRawMaterial']);
 Route::post('/app/raw-material/edit/process', [C_Raw_Material::class, 'processsUpdateRawMaterial']);
+// customer 
+Route::get('/app/customer', [C_Customer::class, 'customerPage']);

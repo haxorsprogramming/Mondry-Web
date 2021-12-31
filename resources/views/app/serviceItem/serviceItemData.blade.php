@@ -38,7 +38,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
         <div class="card-footer border-0 pt-0">
 
