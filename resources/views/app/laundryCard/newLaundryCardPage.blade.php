@@ -1,5 +1,5 @@
 <!-- form add new laundry card  -->
-<div class="col-xl-12" id="divAddServiceItem">
+<div class="col-xl-12" id="divAddLaundryCard">
     <div class="card">
         <div class="card-header border-0 pb-0">
             <h5 class="card-title">Add New Laundry</h5>
@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Customer</label>
@@ -37,19 +37,30 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Item Serviice</th>
+                                        <th>Item Service</th>
                                         <th>Price (@)</th>
                                         <th>Qt</th>
                                         <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    <tr v-for="id in itemData">
+                                        <td>@{{ id.no }}</td>
+                                        <td>@{{ id.itemName }}</td>
+                                        <td>Rp. @{{ Number(id.priceAt).toLocaleString() }}</td>
+                                        <td>
+                                            <input type="number" class="form-control" maxlength="5"/>
+                                        </td>
+                                        <td>Rp. @{{ Number(id.total).toLocaleString() }}</td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
-                    Preview
                 </div>
             </div>
             <hr />
@@ -60,24 +71,11 @@
             </div>
         </div>
     </div>
+
+    @include('app.laundryCard.modalNewLaundry')
+
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="basicModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add New Service</h5>
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">Modal body text goes here.</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <script src="{{ asset('ladun/base/js/newLaundryCard.js') }}"></script>
