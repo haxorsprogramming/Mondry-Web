@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\M_Branch;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -13,6 +11,7 @@ use App\Models\M_Role;
 use App\Models\M_Setting;
 use App\Models\M_Timeline;
 use App\Models\M_User;
+use App\Models\M_Branch;
 
 class C_Helper extends Controller
 {
@@ -61,7 +60,7 @@ class C_Helper extends Controller
         return $dataUser -> branchData;
     }
 
-    public function generateIdMaster($tableName, $prefix, $fieldName)
+    public function generateIdMaster($tableName, $prefix)
     {
         $totalRecord = DB::table($tableName) -> count();
         if($totalRecord == 0){
@@ -71,18 +70,15 @@ class C_Helper extends Controller
             $noId = $huruf . sprintf("%07s", $urutan);
             $ord = 1;
             $dataId = ['ord' => $ord, 'noId' => $noId];
-            return($dataId);
         }else{
             $noIdLast = DB::table($tableName) -> orderby('id', 'desc') -> limit(1) -> get();
-            $noId = $noIdLast[0] -> ord;
-            $lastId = substr($noId, -1);
-            $urutan = $lastId;
-            $urutan++;
+            $noId = $noIdLast[0] -> id;
+            $nowOrd = $noId + 1;
             $huruf = $prefix."-";
-            $noId = $huruf . sprintf("%07s", $urutan);
-            $dataId = ['ord' => $noId, 'noId' => $noId];
-            return($dataId);
+            $noId = $huruf . sprintf("%07s", $nowOrd);
+            $dataId = ['ord' => $nowOrd, 'noId' => $noId];
         }
+        return $dataId;
     }
 
 }

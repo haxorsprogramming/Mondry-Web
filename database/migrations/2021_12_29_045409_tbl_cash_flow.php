@@ -15,7 +15,7 @@ class TblCashFlow extends Migration
     {
         Schema::create('tbl_cash_flow', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_transaction', 80);
+            $table -> uuid('id_flow');
             $table -> char('flow', 1); // in - out
             $table -> text('deks');
             $table -> double('total', 30);

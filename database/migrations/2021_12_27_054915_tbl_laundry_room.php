@@ -15,7 +15,7 @@ class TblLaundryRoom extends Migration
     {
         Schema::create('tbl_laundry_room', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_room', 100);
+            $table -> uuid('id_room');
             $table -> char('id_card', 100);
             $table -> char('handle_by', 100);
             $table -> char('status', 100); //wash-drying-ironing-done

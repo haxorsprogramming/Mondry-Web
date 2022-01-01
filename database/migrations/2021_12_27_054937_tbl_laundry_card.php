@@ -15,7 +15,7 @@ class TblLaundryCard extends Migration
     {
         Schema::create('tbl_laundry_card', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_card', 100);
+            $table -> uuid('id_card');
             $table -> char('id_branch', 100);
             $table -> char('id_customer', 100);
             $table -> char('username_employee', 100);

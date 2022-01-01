@@ -15,7 +15,7 @@ class TblTimeline extends Migration
     {
         Schema::create('tbl_timeline', function (Blueprint $table) {
             $table -> id();
-            $table -> char('token', 80);
+            $table -> uuid('id_timeline');
             $table -> char('username', 100);
             $table -> char('event', 100); 
             $table -> text('deks');

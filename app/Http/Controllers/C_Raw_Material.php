@@ -28,11 +28,12 @@ class C_Raw_Material extends Controller
     }
     public function processAddRawMaterial(Request $request)
     {
-        // {'name':name, 'deks':deks, 'unit':unit, 'stock':stock}
-        $idRaw = Str::uuid();
+        $idMaster = $this -> helperCtr -> generateIdMaster('tbl_raw', 'RAW');
+        $idRaw = $idMaster['noId'];
         $branchData = $this -> helperCtr -> getBranchData();
         $raw = new M_Raw_Material();
         $raw -> id_raw = $idRaw;
+        $raw -> ord = $idMaster['ord'];
         $raw -> raw_name = $request -> name;
         $raw -> unit = $request -> unit;
         $raw -> deks = $request -> deks;

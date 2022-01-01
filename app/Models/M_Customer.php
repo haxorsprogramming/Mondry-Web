@@ -10,6 +10,7 @@ class M_Customer extends Model
 
     protected $fillable = [
         'id_customer',
+        'ord',
         'name',
         'address',
         'email',

@@ -15,7 +15,7 @@ class TblBranch extends Migration
     {
         Schema::create('tbl_branch', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_branch', 20);
+            $table -> uuid('id_branch');
             $table -> integer('ord');
             $table -> char('branch_name', 100);
             $table -> char('username_manager', 100);

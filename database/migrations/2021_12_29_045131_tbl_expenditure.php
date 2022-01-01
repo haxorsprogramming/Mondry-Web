@@ -15,7 +15,7 @@ class TblExpenditure extends Migration
     {
         Schema::create('tbl_expenditure', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_expenditure', 80);
+            $table -> char('kd_expenditure', 10);
             $table -> char('id_branch', 80);
             $table -> char('name', 200);
             $table -> text('deks');

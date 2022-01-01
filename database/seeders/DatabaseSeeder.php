@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         DB::table('tbl_user') -> insert([
             'username' => $username,
             'role' => "2",
-            'id_branch' => 'default',
+            'id_branch' => NULL,
             'password' => password_hash($password, PASSWORD_DEFAULT),
             'active' => '1',
             'created_at' => now(),

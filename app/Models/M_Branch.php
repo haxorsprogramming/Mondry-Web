@@ -10,6 +10,7 @@ class M_Branch extends Model
 
     protected $fillable = [
         'id_branch',
+        'ord',
         'branch_name',
         'username_manager',
         'address',

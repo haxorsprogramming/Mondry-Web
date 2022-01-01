@@ -27,11 +27,13 @@ class C_Service_Item extends Controller
     }
     public function processAddServiceItem(Request $request)
     {
-        // {'itemName':itemName, 'deks':deks, 'unit':unit, 'type':type, 'price':price}
+        $idMaster = $this -> helperCtr -> generateIdMaster('tbl_service_item', 'SRV');
+
         $branchData = $this -> helperCtr -> getBranchData();
-        $idItem = Str::uuid();
+        $idItem = $idMaster['noId'];
         $si = new M_Service_Item();
         $si -> id_item = $idItem;
+        $si -> ord = $idMaster['ord'];
         $si -> id_branch = $branchData -> id_branch;
         $si -> name = $request -> itemName;
         $si -> deks = $request -> deks;

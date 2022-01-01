@@ -10,6 +10,7 @@ class M_Raw_Material extends Model
 
     protected $fillable = [
         'id_raw',
+        'ord',
         'raw_name',
         'unit',
         'deks',

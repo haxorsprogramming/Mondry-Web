@@ -29,10 +29,11 @@ class C_Branch extends Controller
     }
     public function processAddBranch(Request $request)
     {
-        $idBranch = $this -> helperCtr -> generateIdMaster('tbl_branch', 'BRC', 'id_branch');
-        // save branch data 
+        $idMaster = $this -> helperCtr -> generateIdMaster('tbl_branch', 'BRC');
+        // // save branch data 
         $branch = new M_Branch();
-        $branch -> id_branch = $idBranch;
+        $branch -> id_branch = $idMaster['noId'];
+        $branch -> ord = $idMaster['ord'];
         $branch -> branch_name = $request -> name;
         $branch -> username_manager = $request -> manager;
         $branch -> address = $request -> address;
@@ -43,12 +44,12 @@ class C_Branch extends Controller
         $branch -> active = "1";
         $branch -> save();
         $this -> helperCtr -> createTimeline("BRANCH_CREATED", "Branch ".$request -> name." created");
-        // update employee status 
+        // // update employee status 
         M_Employee::where('username', $request -> manager) -> update([
-            'id_branch' => $idBranch
+            'id_branch' => $idMaster['noId']
         ]);
         M_User::where('username', $request -> manager) -> update([
-            'id_branch' => $idBranch
+            'id_branch' => $idMaster['noId']
         ]);
         $this -> helperCtr -> createTimeline("EMPLOYEE_ASSIGN_TO_BRANCH", $request -> manager." just assign to branch ".$request -> name);
         $status = "SUCCESS";

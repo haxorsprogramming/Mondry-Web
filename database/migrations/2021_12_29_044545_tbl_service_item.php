@@ -15,7 +15,7 @@ class TblServiceItem extends Migration
     {
         Schema::create('tbl_service_item', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_item', 80);
+            $table -> uuid('id_item');
             $table -> char('id_branch', 80);
             $table -> char('name', 200);
             $table -> text('deks');

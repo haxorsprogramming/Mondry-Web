@@ -70,6 +70,8 @@ var employeeApp = new Vue({
     }
 });
 // inisialisasi 
+$("#tblEmployee").dataTable();
+
 function setEmployeeName()
 {
     let employeeName = document.querySelector("#txtName").value;

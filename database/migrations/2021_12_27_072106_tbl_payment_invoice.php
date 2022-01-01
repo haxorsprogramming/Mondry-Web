@@ -15,7 +15,7 @@ class TblPaymentInvoice extends Migration
     {
         Schema::create('tbl_payment_invoice', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_payment', 100);
+            $table -> uuid('id_payment');
             $table -> char('invoice_no', 100);
             $table -> char('id_card', 100);
             $table -> char('username_employee', 100);

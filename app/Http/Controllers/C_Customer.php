@@ -26,10 +26,11 @@ class C_Customer extends Controller
     }
     public function processAddCustomer(Request $request)
     {
-        // {'name':name, 'address':address, 'email':email, 'phone':phone}
-        $idCustomer = Str::uuid();
+        $idMaster = $this -> helperCtr -> generateIdMaster('tbl_customer', 'CUS');
+        $idCustomer = $idMaster['noId'];
         $cus = new M_Customer();
         $cus -> id_customer = $idCustomer;
+        $cus -> ord = $idMaster['ord'];
         $cus -> name = $request -> name;
         $cus -> address = $request -> address;
         $cus -> email = $request -> email;

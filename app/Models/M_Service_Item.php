@@ -10,6 +10,7 @@ class M_Service_Item extends Model
     
     protected $fillable = [
         'id_item',
+        'row',
         'id_branch',
         'name',
         'deks',
