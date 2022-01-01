@@ -35,6 +35,36 @@ class DatabaseSeeder extends Seeder
         $this -> createSetting('DOMAIN', 'Domain name', 'http://mondry.nadhamedia.com');
         $this -> createSetting('USING_WHATSAPP_GATEWAY', 'Laundry using whatsapp gateway','Y');
         $this -> createSetting('API_WOOWA', 'API Key Woowa', '-');
+        // create manager 
+        $this -> createManager('aditia', 'admin123', 'Aditia Darma', 'Medan', 'adit@gmail.com', '0878123412');
+        $this -> createManager('hasnah', 'admin123', 'Hasnah Ardita', 'Medan', 'hasnah@gmail.com', '0878123412');
+        $this -> createManager('adam', 'admin123', 'Adam Falizufa', 'Medan', 'adam@gmail.com', '0878123412');
+        $this -> createManager('diana', 'admin123', 'Diana Vita', 'Medan', 'diana@gmail.com', '0878123412');
+        $this -> createManager('nisa', 'admin123', 'Khairunnisa Siregar', 'Medan', 'nisa@gmail.com', '0878123412');
+    }
+
+    function createManager($username, $password, $name, $address, $email, $phone)
+    {
+        // save table user 
+        DB::table('tbl_user') -> insert([
+            'username' => $username,
+            'role' => "2",
+            'id_branch' => 'default',
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'active' => '1',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        // save table employee
+        DB::table('tbl_employee') -> insert([
+            'username' => $username,
+            'role' => "2",
+            'name' => $name,
+            'address' => $address,
+            'email' => $email,
+            'phone_number' => $phone,
+            'active' => "1"
+        ]);
     }
 
     function createUser($username, $password, $role)

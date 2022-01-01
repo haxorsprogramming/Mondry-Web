@@ -29,7 +29,7 @@ class C_Branch extends Controller
     }
     public function processAddBranch(Request $request)
     {
-        $idBranch = Str::uuid();
+        $idBranch = $this -> helperCtr -> generateIdMaster('tbl_branch', 'BRC', 'id_branch');
         // save branch data 
         $branch = new M_Branch();
         $branch -> id_branch = $idBranch;

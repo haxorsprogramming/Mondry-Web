@@ -11,7 +11,7 @@
             </li>
             <!-- monitor laundry  -->
             <li>
-                <a href="#!" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" @click="laundryCardAtc()" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">sticky_note_2</i>
                     <span class="nav-text">Laundry Card</span>
                 </a>

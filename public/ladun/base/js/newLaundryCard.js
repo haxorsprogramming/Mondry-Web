@@ -25,8 +25,8 @@ var appLaundry = new Vue({
         {
             let ds = {'idCustomer':appLaundry.idCustomerSelected, 'itemData':appLaundry.itemData}
             axios.post(rProcessRegisNewLaundry, ds).then(function(res){
-                let obj = res.data;
-                console.log(obj);
+                pesanUmumApp('success', 'Success', 'Success registered new laundry..');
+                load_page(rLaundryCard, "Laundry Card");
             });
         }
     },

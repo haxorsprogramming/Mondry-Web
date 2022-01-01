@@ -42,5 +42,6 @@ Route::get('/app/customer', [C_Customer::class, 'customerPage']);
 Route::post('/app/customer/add/process', [C_Customer::class, 'processAddCustomer']);
 Route::post('/app/customer/delete/process', [C_Customer::class, 'processDeleteCustomer']);
 // laundry card 
+Route::get('/app/laundry-card', [C_Laundry_Card::class, 'laundryCard']);
 Route::get('/app/laundry-card/new', [C_Laundry_Card::class, 'newLaundryCard']);
 Route::post('/app/laundry-card/add/process', [C_Laundry_Card::class, 'processAddNewLaundry']);

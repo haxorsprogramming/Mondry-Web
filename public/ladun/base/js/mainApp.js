@@ -6,6 +6,7 @@ var rServiceItem = server + "app/service-item";
 var rRawMaterial = server + "app/raw-material";
 var rCustomer = server + "app/customer";
 var rNewLaundry = server + "app/laundry-card/new";
+var rLaundryCard = server + "app/laundry-card";
 var rLogOut = server + "logout";
 // vue object
 var menuApp = new Vue({
@@ -39,6 +40,10 @@ var menuApp = new Vue({
         newLaundryAtc : function()
         {
             load_page(rNewLaundry, "New Laundry");
+        },
+        laundryCardAtc : function()
+        {
+            load_page(rLaundryCard, "Laundry Card");
         },
         logOutAtc : function()
         {

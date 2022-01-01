@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\M_Role;
 use App\Models\M_Setting;
@@ -59,4 +60,29 @@ class C_Helper extends Controller
         $dataUser = M_User::where('username', $username) -> first();
         return $dataUser -> branchData;
     }
+
+    public function generateIdMaster($tableName, $prefix, $fieldName)
+    {
+        $totalRecord = DB::table($tableName) -> count();
+        if($totalRecord == 0){
+            $urutan = (int) substr(0, 3, 3);
+            $urutan++;
+            $huruf = $prefix."-";
+            $noId = $huruf . sprintf("%07s", $urutan);
+            $ord = 1;
+            $dataId = ['ord' => $ord, 'noId' => $noId];
+            return($dataId);
+        }else{
+            $noIdLast = DB::table($tableName) -> orderby('id', 'desc') -> limit(1) -> get();
+            $noId = $noIdLast[0] -> ord;
+            $lastId = substr($noId, -1);
+            $urutan = $lastId;
+            $urutan++;
+            $huruf = $prefix."-";
+            $noId = $huruf . sprintf("%07s", $urutan);
+            $dataId = ['ord' => $noId, 'noId' => $noId];
+            return($dataId);
+        }
+    }
+
 }

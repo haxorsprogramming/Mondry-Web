@@ -11,7 +11,7 @@
             <div class="table-responsive">
                 <table id="tblServiceItem" class="table table-hover">
                     <thead>
-                        <tr>
+                        <tr style="background-color: #dfe6e9;">
                             <th>No</th>
                             <th>Name</th>
                             <th>Desc</th>
