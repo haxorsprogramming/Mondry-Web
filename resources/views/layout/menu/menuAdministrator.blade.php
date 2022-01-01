@@ -27,7 +27,7 @@
                 <ul aria-expanded="false">
                     <li><a href="javascript:void(0)" @click="branchAtc()">Branch</a></li>
                     <li><a href="javascript:void(0)" @click="employeeAtc()">Employee</a></li>
-                    <li><a href="#!">Customer</a></li>
+                    <li><a href="javascript:void(0)" @click="customerAtc()">Customer</a></li>
                 </ul>
             </li>
             <!-- setting  -->

@@ -50,12 +50,17 @@
                                         <td>@{{ id.itemName }}</td>
                                         <td>Rp. @{{ Number(id.priceAt).toLocaleString() }}</td>
                                         <td>
-                                            <input type="number" class="form-control" maxlength="5" v-on:keyup="setPrice(id.idItem)" v-bind:id="'qt_'+id.idItem"/>
+                                            <input type="number" class="form-control" maxlength="5" v-on:keyup="setPrice(id.idItem)" v-bind:id="'qt_'+id.idItem" value="0"/>
                                         </td>
                                         <td>Rp. @{{ Number(id.total).toLocaleString() }}</td>
                                         <td>
                                             <a href="javascript:void(0)" class="btn btn-sm btn-warning btnDelete" @click='deleteItem(id.idItem)'>Delete</a>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><b>Total</b></td>
+                                        <td>Rp. @{{ Number(totalPrice).toLocaleString() }}</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -65,7 +70,7 @@
             </div>
             <hr />
             <div style="margin-top: 20px;">
-                <a class="btn btn-rounded btn-primary" href="javascript:void(0)">
+                <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="processRegisNewLaundryCardAtc()">
                     <span class="btn-icon-left text-success"><i class="material-icons">how_to_reg</i></span>Registration New Laundry
                 </a>
             </div>
