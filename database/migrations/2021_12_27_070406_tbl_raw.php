@@ -15,7 +15,7 @@ class TblRaw extends Migration
     {
         Schema::create('tbl_raw', function (Blueprint $table) {
             $table -> id();
-            $table -> uuid('id_raw');
+            $table -> char('id_raw', 60);
             $table -> char('raw_name', 100);
             $table -> char('unit', 20); //kg - litre - dozen - rim - pcs - box
             $table -> text('deks');

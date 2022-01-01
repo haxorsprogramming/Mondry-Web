@@ -9,7 +9,7 @@ class M_Timeline extends Model
     protected $table = "tbl_timeline";
     
     protected $fillable = [
-        'token',
+        'id_timeline',
         'username',
         'event',
         'deks'

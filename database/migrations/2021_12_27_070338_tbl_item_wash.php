@@ -15,8 +15,8 @@ class TblItemWash extends Migration
     {
         Schema::create('tbl_item_wash', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_room', 100);
-            $table -> char('id_raw', 100);
+            $table -> char('id_room', 60);
+            $table -> char('id_raw', 60);
             $table -> integer('qt_use');
             $table -> integer('stock');
             $table -> timestamps(); 

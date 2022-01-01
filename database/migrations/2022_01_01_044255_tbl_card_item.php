@@ -15,8 +15,8 @@ class TblCardItem extends Migration
     {
         Schema::create('tbl_card_item', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_card', 80);
-            $table -> char('id_service_item', 80);
+            $table -> char('id_card', 60);
+            $table -> char('id_service_item', 60);
             $table -> double('price_at');
             $table -> integer('qt');
             $table -> double('total');

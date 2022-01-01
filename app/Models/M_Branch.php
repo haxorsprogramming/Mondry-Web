@@ -10,7 +10,6 @@ class M_Branch extends Model
 
     protected $fillable = [
         'id_branch',
-        'ord',
         'branch_name',
         'username_manager',
         'address',
@@ -23,7 +22,7 @@ class M_Branch extends Model
 
     public function employeeData()
     {
-        return $this->belongsTo(M_Employee::class, 'username_manager', 'username');
+        return $this -> belongsTo(M_Employee::class, 'username_manager', 'username');
     }
 
 }

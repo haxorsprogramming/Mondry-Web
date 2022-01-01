@@ -39,7 +39,7 @@ class C_Helper extends Controller
         $dataLogin = $this -> getUserLoginData();
 
         $timeline = New M_Timeline();
-        $timeline -> token = Str::uuid();
+        $timeline -> id_timeline = Str::uuid();
         $timeline -> username = $dataLogin -> username;
         $timeline -> event = $event;
         $timeline -> deks = $deks;

@@ -15,7 +15,7 @@ class TblCustomer extends Migration
     {
         Schema::create('tbl_customer', function (Blueprint $table) {
             $table -> id();
-            $table -> uuid('id_customer');
+            $table -> char('id_customer', 60);
             $table -> char('name', 100);
             $table -> char('address', 200) -> nullable();
             $table -> char('email', 200) -> nullable();
