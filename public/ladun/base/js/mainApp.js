@@ -7,6 +7,7 @@ var rRawMaterial = server + "app/raw-material";
 var rCustomer = server + "app/customer";
 var rNewLaundry = server + "app/laundry-card/new";
 var rLaundryCard = server + "app/laundry-card";
+var rPromoCode = server + "app/promo-code";
 var rLogOut = server + "logout";
 // vue object
 var menuApp = new Vue({
@@ -44,6 +45,10 @@ var menuApp = new Vue({
         laundryCardAtc : function()
         {
             load_page(rLaundryCard, "Laundry Card");
+        },
+        promoCode : function()
+        {
+            load_page(rPromoCode, "Promo Code");
         },
         logOutAtc : function()
         {

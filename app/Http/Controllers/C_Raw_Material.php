@@ -28,12 +28,10 @@ class C_Raw_Material extends Controller
     }
     public function processAddRawMaterial(Request $request)
     {
-        $idMaster = $this -> helperCtr -> generateIdMaster('tbl_raw', 'RAW');
-        $idRaw = $idMaster['noId'];
+        $idRaw = Str::uuid();
         $branchData = $this -> helperCtr -> getBranchData();
         $raw = new M_Raw_Material();
         $raw -> id_raw = $idRaw;
-        $raw -> ord = $idMaster['ord'];
         $raw -> raw_name = $request -> name;
         $raw -> unit = $request -> unit;
         $raw -> deks = $request -> deks;
@@ -51,7 +49,7 @@ class C_Raw_Material extends Controller
         // {'idRaw':idRaw}
         $idRaw = $request -> idRaw;
         M_Raw_Material::where('id_raw', $idRaw) -> delete();
-        $this -> helperCtr -> createTimeline("RAW_MATERIAL_DELETE", "Raw material deleted");
+        $this -> helperCtr -> createTimeline("RAW_MATERIAL_DELETED", "Raw material deleted");
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }

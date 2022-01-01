@@ -66,6 +66,16 @@
                             </table>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Payment</label>
+                            <select id="txtPayment" class="form-control" onchange="setPayment()">
+                                <option value="none">--- Choose payment type ---</option>
+                                <option value="now">Pay now</option>
+                                <option value="later">Pay after done</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr />

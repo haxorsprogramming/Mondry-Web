@@ -11,6 +11,8 @@ use App\Http\Controllers\C_Service_Item;
 use App\Http\Controllers\C_Raw_Material;
 use App\Http\Controllers\C_Customer;
 use App\Http\Controllers\C_Laundry_Card;
+use App\Http\Controllers\C_Promo_Code;
+
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -42,6 +44,8 @@ Route::get('/app/customer', [C_Customer::class, 'customerPage']);
 Route::post('/app/customer/add/process', [C_Customer::class, 'processAddCustomer']);
 Route::post('/app/customer/delete/process', [C_Customer::class, 'processDeleteCustomer']);
 // laundry card 
-Route::get('/app/laundry-card', [C_Laundry_Card::class, 'laundryCard']);
+Route::get('/app/laundry-card', [C_Laundry_Card::class, 'laundryCardPage']);
 Route::get('/app/laundry-card/new', [C_Laundry_Card::class, 'newLaundryCard']);
 Route::post('/app/laundry-card/add/process', [C_Laundry_Card::class, 'processAddNewLaundry']);
+// promo code 
+Route::get('/app/promo-code', [C_Promo_Code::class, 'promoCodePage']);

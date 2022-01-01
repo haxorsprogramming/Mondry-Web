@@ -37,6 +37,12 @@ $("#tblNewService").dataTable();
 tip(".btnDelete", "Delete");
 var no = 1;
 
+function setPayment()
+{
+    let paymentType = document.querySelector("#txtPayment").value;
+    console.log(paymentType);
+}
+
 function setTotalPrice()
 {
     let totalPrice = 0;

@@ -22,7 +22,7 @@ class C_Laundry_Card extends Controller
         $this -> branchData = $helperCtr -> getBranchData();
     }
 
-    public function laundryCard()
+    public function laundryCardPage()
     {
         $cardData = M_Laundry_Card::where('id_branch', $this -> branchData -> id_branch) -> get();
         $dr = ['cardData' => $cardData];

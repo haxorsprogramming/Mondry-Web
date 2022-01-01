@@ -13,10 +13,10 @@
                     <thead>
                         <tr style="background-color: #dfe6e9;">
                             <th>No</th>
-                            <th>Name</th>
-                            <th>Desc</th>
-                            <th>Type / Unit</th>
-                            <th>Price</th>
+                            <th>ID Laundry</th>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th>Status Payment</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -24,7 +24,7 @@
                     @foreach($cardData as $cd)
                     <tr>
                         <td>{{ $loop -> iteration }}</td>
-                        <td></td>
+                        <td>{{ $cd ->  id_card}}</td>
                         <td></td>
                         <td></td>
                         <td></td>
