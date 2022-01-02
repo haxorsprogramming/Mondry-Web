@@ -19,7 +19,7 @@ class TblPromoCode extends Migration
             $table -> char('id_branch', 60);
             $table -> char('promo_name', 200);
             $table -> text('deks');
-            $table -> text('type', 1); // percent (P) - value (V)
+            $table -> char('type', 1); // percent (P) - value (V)
             $table -> double('value');
             $table -> char('quota', 5) -> nullable(); // if unlimited set "UNLIMITED"
             $table -> date('expired_on');

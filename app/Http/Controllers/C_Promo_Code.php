@@ -21,12 +21,13 @@ class C_Promo_Code extends Controller
 
     public function promoCodePage()
     {
-        return view('app.promoCode.promoCodePage');
+        $dataPromo = M_Promo_Code::where('id_branch', $this -> branchData -> id_branch) -> get();
+        $dr = ['dataPromo' => $dataPromo];
+        return view('app.promoCode.promoCodePage', $dr);
     }
     public function processAddNewPromoCode(Request $request)
     {
         // {'name':name, 'deks':deks, 'type':type, 'value':value, 'quota':quota, 'expired':expired}
-        $dataUser = $this -> helperCtr -> getUserLoginData();
         $promo = new M_Promo_Code();
         $promo -> id_code = Str::uuid();
         $promo -> id_branch = $this -> branchData -> id_branch;

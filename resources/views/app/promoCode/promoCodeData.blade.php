@@ -20,7 +20,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+                    @foreach($dataPromo as $promo)
+                    <tr>
+                        <td>{{ $loop -> iteration }}</td>
+                        <td>{{ $promo -> promo_name }}</td>
+                        <td>{{ $promo -> deks }}</td>
+                        <td>{{ $promo -> type }}</td>
+                        <td></td>
+                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
