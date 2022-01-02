@@ -49,3 +49,4 @@ Route::get('/app/laundry-card/new', [C_Laundry_Card::class, 'newLaundryCard']);
 Route::post('/app/laundry-card/add/process', [C_Laundry_Card::class, 'processAddNewLaundry']);
 // promo code 
 Route::get('/app/promo-code', [C_Promo_Code::class, 'promoCodePage']);
+Route::post('/app/promo-code/add/process', [C_Promo_Code::class, 'processAddNewPromoCode']);

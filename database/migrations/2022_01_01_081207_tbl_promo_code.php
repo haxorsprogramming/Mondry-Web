@@ -21,7 +21,7 @@ class TblPromoCode extends Migration
             $table -> text('deks');
             $table -> text('type', 1); // percent (P) - value (V)
             $table -> double('value');
-            $table -> char('quota', 5); // if unlimited set "UNLIMITED"
+            $table -> char('quota', 5) -> nullable(); // if unlimited set "UNLIMITED"
             $table -> date('expired_on');
             $table -> timestamps(); 
             $table -> char('active', 1);
