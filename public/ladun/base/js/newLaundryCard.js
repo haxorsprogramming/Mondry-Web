@@ -7,7 +7,10 @@ var appLaundry = new Vue({
         itemData: [],
         stateIdItemInTemp: false,
         idCustomerSelected: "",
-        totalPrice : 0
+        totalPrice : 0,
+        togCusData : false,
+        customerSelected : "",
+        txtBtnSelectCustomer : "Select customer"
     },
     methods: {
         chooseAtc: function (itemData) {
@@ -28,12 +31,22 @@ var appLaundry = new Vue({
                 pesanUmumApp('success', 'Success', 'Success registered new laundry..');
                 load_page(rLaundryCard, "Laundry Card");
             });
+        },
+        chooseCustomerAtc : function(cusData)
+        {
+            let exCus = cusData.split("|");
+            appLaundry.togCusData = true;
+            appLaundry.customerSelected = exCus[1];
+            appLaundry.idCustomerSelected = exCus[0];
+            $("#customerModal").modal("hide");
+            appLaundry.txtBtnSelectCustomer = "Change customer";
         }
     },
 });
 // inialisasi
 $("#txtCustomer").select2();
 $("#tblNewService").dataTable();
+$("#tblCustomer").dataTable();
 tip(".btnDelete", "Delete");
 var no = 1;
 
@@ -62,11 +75,6 @@ function deleteItem(idItem) {
     }
     appLaundry.itemData.splice(indexChoice, 1);
     resetOrdinal();
-}
-
-function setCustomer() {
-    let customer = document.querySelector("#txtCustomer").value;
-    appLaundry.idCustomerSelected = customer;
 }
 
 function setPrice(idItem) {

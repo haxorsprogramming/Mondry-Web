@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         // create cashier 
         $this -> createEmployee('vivi', 'admin123', 'Vivi Maulida', $idBranch, "3");
         // create customer 
-        $this -> createFakeCustomer(10);
+        $this -> createFakeCustomer(30);
         // create service item 
         $this -> createServiceItem($idBranch, "Base Clothes", "6000");
         $this -> createServiceItem($idBranch, "Sprei", "9000");

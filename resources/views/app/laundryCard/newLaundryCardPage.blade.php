@@ -13,21 +13,20 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Customer</label>
-                            <select id="txtCustomer" class="form-control" onchange="setCustomer()">
-                                <option value="none">--- Choose Customer ---</option>
-                                @foreach($cusData as $cus)
-                                <option value="{{ $cus -> id_customer }}">{{ $cus -> name }}</option>
-                                @endforeach
-                            </select>
+                            <br/>
+                            <div style="margin-bottom: 20px;">
+                                <span v-if="togCusData" style="font-size: 20px;">(@{{ customerSelected }})</span>
+                            </div>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#customerModal">@{{ txtBtnSelectCustomer }}</a>
                         </div>
                     </div>
+                    <hr/>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label>Service Item</label><br />
                                     <a href="javascript:void(0)" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#basicModal">
-
                                         Add new service
                                     </a>
                                     </select>
