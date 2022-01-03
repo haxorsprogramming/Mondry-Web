@@ -10,7 +10,9 @@ var appLaundry = new Vue({
         totalPrice : 0,
         togCusData : false,
         customerSelected : "",
-        txtBtnSelectCustomer : "Select customer"
+        txtBtnSelectCustomer : "Select customer",
+        togPaymentNow : false,
+        disc : 0
     },
     methods: {
         chooseAtc: function (itemData) {
@@ -40,6 +42,11 @@ var appLaundry = new Vue({
             appLaundry.idCustomerSelected = exCus[0];
             $("#customerModal").modal("hide");
             appLaundry.txtBtnSelectCustomer = "Change customer";
+        },
+        checkPromoAtc : function()
+        {
+            let promoCode = document.querySelector("#txtPromoCode").value;
+            
         }
     },
 });
@@ -53,7 +60,11 @@ var no = 1;
 function setPayment()
 {
     let paymentType = document.querySelector("#txtPayment").value;
-    console.log(paymentType);
+    if(paymentType === "now"){
+        appLaundry.togPaymentNow = true;
+    }else{
+        appLaundry.togPaymentNow = false;
+    }
 }
 
 function setTotalPrice()
@@ -87,7 +98,7 @@ function setPrice(idItem) {
     }
     let priceAt = appLaundry.itemData[indexChoice].priceAt;
     let qtInField = document.querySelector("#qt_" + idItem).value;
-    let total = parseInt(priceAt) * parseInt(qtInField);
+    let total = parseFloat(priceAt) * parseFloat(qtInField);
     appLaundry.itemData[indexChoice].qt = qtInField;
     appLaundry.itemData[indexChoice].total = total;
 }

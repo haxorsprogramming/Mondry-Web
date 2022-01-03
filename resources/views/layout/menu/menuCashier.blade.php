@@ -18,7 +18,7 @@
             </li>
             <!-- monitor laundry  -->
             <li>
-                <a href="#!" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">wysiwyg</i>
                     <span class="nav-text">Laundry Room</span>
                 </a>
@@ -49,7 +49,7 @@
             </li>
             <!-- setting  -->
             <li>
-                <a href="#!" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">settings</i>
                     <span class="nav-text">Setting</span>
                 </a>
