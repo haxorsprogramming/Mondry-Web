@@ -2,7 +2,7 @@
 <div class="row" id="divPaymentMethod" v-if="togPaymentNow">
     <div class="form-group col-md-6">
         <label>Cash</label>
-        <input type="number" class="form-control" />
+        <input type="number" class="form-control" onkeyup="setCash()" id="txtCash"/>
     </div>
     <div class="form-group col-md-6">
         <label>Promo Code</label>
@@ -39,7 +39,7 @@
                     <h5 class="f-w-500">Total service <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>Rp. @{{ Number(totalPrice).toLocaleString() }}</span>
+                <div class="col-sm-9 col-7"><span>{{ env('CURRENCY') }}. @{{ Number(totalPrice).toLocaleString() }}</span>
                 </div>
             </div>
             <div class="row mb-2">
@@ -47,15 +47,15 @@
                     <h5 class="f-w-500">Disc <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>Rp. @{{ Number(totalDisc).toLocaleString() }}</span>
+                <div class="col-sm-9 col-7"><span>{{ env('CURRENCY') }}. @{{ Number(totalDisc).toLocaleString() }}</span>
                 </div>
             </div>
             <div class="row mb-2">
                 <div class="col-sm-3 col-5">
-                    <h5 class="f-w-500">Total Price <span class="pull-right">:</span>
+                    <h5 class="f-w-500">FInal Price <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>example@examplel.com</span>
+                <div class="col-sm-9 col-7"><span>{{ env('CURRENCY') }}. @{{ Number(finalPrice).toLocaleString() }}</span>
                 </div>
             </div>
             <div class="row mb-2">
@@ -63,7 +63,7 @@
                     <h5 class="f-w-500">Cash <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>example@examplel.com</span>
+                <div class="col-sm-9 col-7"><span>{{ env('CURRENCY') }}. @{{ Number(cash).toLocaleString() }}</span>
                 </div>
             </div>
             <div class="row mb-2">
@@ -71,7 +71,7 @@
                     <h5 class="f-w-500">Back <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>example@examplel.com</span>
+                <div class="col-sm-9 col-7"><span>{{ env('CURRENCY') }}. @{{ Number(back).toLocaleString() }}</span>
                 </div>
             </div>
         </div>

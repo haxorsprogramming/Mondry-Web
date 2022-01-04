@@ -46,18 +46,18 @@
                                     <tr v-for="id in itemData">
                                         <td>@{{ id.no }}</td>
                                         <td>@{{ id.itemName }}</td>
-                                        <td>Rp. @{{ Number(id.priceAt).toLocaleString() }}</td>
+                                        <td>{{ env('CURRENCY') }}. @{{ Number(id.priceAt).toLocaleString() }}</td>
                                         <td>
                                             <input type="number" class="form-control" maxlength="5" v-on:keyup="setPrice(id.idItem)" v-bind:id="'qt_'+id.idItem" value="0" />
                                         </td>
-                                        <td>Rp. @{{ Number(id.total).toLocaleString() }}</td>
+                                        <td>{{ env('CURRENCY') }}. @{{ Number(id.total).toLocaleString() }}</td>
                                         <td>
                                             <a href="javascript:void(0)" class="btn btn-sm btn-warning btnDelete" @click='deleteItem(id.idItem)'>Delete</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="4"><b>Total</b></td>
-                                        <td>Rp. @{{ Number(totalPrice).toLocaleString() }}</td>
+                                        <td>{{ env('CURRENCY') }}. @{{ Number(totalPrice).toLocaleString() }}</td>
                                         <td></td>
                                     </tr>
                                 </tbody>

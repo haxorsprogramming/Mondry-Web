@@ -13,7 +13,10 @@ var appLaundry = new Vue({
         customerSelected : "",
         txtBtnSelectCustomer : "Select customer",
         togPaymentNow : false,
-        totalDisc : 0
+        totalDisc : 0,
+        finalPrice : 0,
+        cash : 0,
+        back : 0
     },
     methods: {
         chooseAtc: function (itemData) {
@@ -55,11 +58,12 @@ var appLaundry = new Vue({
                     let type = promoData.type;
                     let valueR = promoData.value;
                     if(type === "P"){
-                        let discTemp = (parseFloat(valueR) / 100) / parseFloat(appLaundry.totalPrice);
-                        console.log(discTemp);
+                        let disc = (valueR / 100) * appLaundry.totalPrice;
+                        appLaundry.totalDisc = disc;
                     }else{
-
+                        appLaundry.totalDisc = valueR;
                     }
+                    pesanUmumApp('success', 'Promo assign', 'Promo succesfully add, promo name : '+promoData.promo_name+'.');
                 }else{
                     pesanUmumApp('warning', 'No code', 'No promo code available');
                 }
@@ -73,6 +77,14 @@ $("#tblNewService").dataTable();
 $("#tblCustomer").dataTable();
 tip(".btnDelete", "Delete");
 var no = 1;
+
+function setCash()
+{
+    let cash = document.querySelector("#txtCash").value;
+    appLaundry.cash = cash;
+    let back = parseInt(cash) - parseInt(appLaundry.finalPrice);
+    appLaundry.back = back;
+}
 
 function setPayment()
 {

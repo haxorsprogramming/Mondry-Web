@@ -24,9 +24,9 @@
                             <td>{{ $loop -> iteration }}</td>
                             <td>{{ $item -> name }}</td>
                             <td>{{ $item -> unit }}</td>
-                            <td>Rp. {{ number_format($item -> price_at) }}</td>
+                            <td>{{ env('CURRENCY') }}. {{ number_format($item -> price_at) }}</td>
                             <td>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-primary" @click="chooseAtc('{{ $item -> id_item }}|{{ $item -> name }}|{{ $item -> price_at }}')">Choose</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-primary" @click="chooseAtc('{{ $item -> id_item }}|{{ $item -> name }}|{{ $item -> price_at }}')">Add</a>
                             </td>
                         </tr>
                         @endforeach
