@@ -11,6 +11,7 @@ class M_Promo_Code extends Model
     protected $fillable = [
         'id_code',
         'id_branch',
+        'promo_code',
         'promo_name',
         'deks',
         'type',

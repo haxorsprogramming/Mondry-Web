@@ -9,6 +9,7 @@ use App\Models\M_Customer;
 use App\Models\M_Service_Item;
 use App\Models\M_Laundry_Card;
 use App\Models\M_Card_Item;
+use App\Models\M_Promo_Code;
 
 use App\Http\Controllers\C_Helper;
 
@@ -65,6 +66,21 @@ class C_Laundry_Card extends Controller
             $or++;
         }
         $dr = ['status' => 'success', 'idCustomer' => $idCustomer, 'itemData' => $itemData];
+        return \Response::json($dr);
+    }
+    public function checkPromoCode(Request $request)
+    {
+        $code = $request -> code;
+        $promoCheck = M_Promo_Code::where('promo_code', $code) -> count();
+        if($promoCheck < 1){
+            $status = "NO_CODE";
+            $promoData = NULL;
+        }else{
+            $promoData =  M_Promo_Code::where('promo_code', $code) -> first();
+            $status = "SUCCESS";
+            $promoData = $promoData;
+        }
+        $dr = ['status' => $status, 'promoData' => $promoData];
         return \Response::json($dr);
     }
 }

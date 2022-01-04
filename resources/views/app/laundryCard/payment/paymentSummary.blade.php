@@ -1,6 +1,10 @@
 <h4 class="text-primary mb-4">Payment Summary</h4>
 <div class="row" id="divPaymentMethod" v-if="togPaymentNow">
     <div class="form-group col-md-6">
+        <label>Cash</label>
+        <input type="number" class="form-control" />
+    </div>
+    <div class="form-group col-md-6">
         <label>Promo Code</label>
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="txtPromoCode">
@@ -8,10 +12,6 @@
                 <a class="btn btn-primary" href="javascript:void(0)" @click="checkPromoAtc()">Check</a>
             </div>
         </div>
-    </div>
-    <div class="form-group col-md-6">
-        <label>Cash</label>
-        <input type="number" class="form-control" />
     </div>
 </div>
 <div class="row" v-if="togPaymentNow">
@@ -47,7 +47,7 @@
                     <h5 class="f-w-500">Disc <span class="pull-right">:</span>
                     </h5>
                 </div>
-                <div class="col-sm-9 col-7"><span>example@examplel.com</span>
+                <div class="col-sm-9 col-7"><span>Rp. @{{ Number(totalDisc).toLocaleString() }}</span>
                 </div>
             </div>
             <div class="row mb-2">

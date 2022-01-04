@@ -17,6 +17,7 @@ class TblPromoCode extends Migration
             $table -> id();
             $table -> char('id_code', 60);
             $table -> char('id_branch', 60);
+            $table -> char('promo_code', 100);
             $table -> char('promo_name', 200);
             $table -> text('deks');
             $table -> char('type', 1); // percent (P) - value (V)

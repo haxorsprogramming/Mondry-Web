@@ -62,16 +62,17 @@ class DatabaseSeeder extends Seeder
         $this -> createRawMaterial("Plastic", $idBranch, "15");
         $this -> createRawMaterial("Soap", $idBranch, "23");
         // create promo code 
-        $this -> createPromoCode($idBranch, "Promo Kemerdekaan", "5", "20");
-        $this -> createPromoCode($idBranch, "Promo Tahun Baru", "10", "30");
-        $this -> createPromoCode($idBranch, "Promo Hari raya idul fitri", "15", "20");
+        $this -> createPromoCode($idBranch, "MERDEKA", "Promo Kemerdekaan", "5", "20");
+        $this -> createPromoCode($idBranch, "NEWYEAR", "Promo Tahun Baru", "10", "30");
+        $this -> createPromoCode($idBranch, "IDULFITRI","Promo Hari raya idul fitri", "15", "20");
     }
 
-    function createPromoCode($idBranch, $name, $value, $quota)
+    function createPromoCode($idBranch, $promoCode, $name, $value, $quota)
     {
         DB::table('tbl_promo_code') -> insert([
             'id_code' => Str::uuid(),
             'id_branch' => $idBranch,
+            'promo_code' => $promoCode,
             'promo_name' => $name,
             'deks' => $this -> faker -> text($maxNbChars = 100),
             'type' => "P",

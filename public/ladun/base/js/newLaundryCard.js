@@ -1,5 +1,6 @@
 // route 
 var rProcessRegisNewLaundry = server + "app/laundry-card/add/process";
+var rCheckPromoCode = server + "app/laundry-card/promo-code/check";
 // vue object
 var appLaundry = new Vue({
     el: "#divAddLaundryCard",
@@ -12,7 +13,7 @@ var appLaundry = new Vue({
         customerSelected : "",
         txtBtnSelectCustomer : "Select customer",
         togPaymentNow : false,
-        disc : 0
+        totalDisc : 0
     },
     methods: {
         chooseAtc: function (itemData) {
@@ -46,7 +47,23 @@ var appLaundry = new Vue({
         checkPromoAtc : function()
         {
             let promoCode = document.querySelector("#txtPromoCode").value;
-            
+            let ds = {'code':promoCode}
+            axios.post(rCheckPromoCode, ds).then(function(res){
+                let obj = res.data;
+                if(obj.status === 'SUCCESS'){
+                    let promoData = obj.promoData;
+                    let type = promoData.type;
+                    let valueR = promoData.value;
+                    if(type === "P"){
+                        let discTemp = (parseFloat(valueR) / 100) / parseFloat(appLaundry.totalPrice);
+                        console.log(discTemp);
+                    }else{
+
+                    }
+                }else{
+                    pesanUmumApp('warning', 'No code', 'No promo code available');
+                }
+            });
         }
     },
 });
