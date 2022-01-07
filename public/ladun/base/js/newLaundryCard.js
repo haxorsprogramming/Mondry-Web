@@ -12,7 +12,6 @@ var appLaundry = new Vue({
         togCusData : false,
         customerSelected : "",
         txtBtnSelectCustomer : "Select customer",
-        togPaymentNow : false,
         totalDisc : 0,
         finalPrice : 0,
         cash : 0,
@@ -76,31 +75,32 @@ $("#txtCustomer").select2();
 $("#tblNewService").dataTable();
 $("#tblCustomer").dataTable();
 tip(".btnDelete", "Delete");
-
+$('#txtCash').mask('000.000.000.000.000', {reverse: true});
 var no = 1;
 
 function countPayment()
 {
     let cash = document.querySelector("#txtCash").value;
-    appLaundry.cash = cash;
+    cashFix = clearDot(cash);
+    
+    // appLaundry.cash = cash;
 }
 
-function setCash()
+function clearDot(num)
 {
-    let cash = document.querySelector("#txtCash").value;
-    appLaundry.cash = cash;
-    let back = parseInt(cash) - parseInt(appLaundry.totalPrice);
-    appLaundry.back = back;
+    let fixNum = num.replace(".","");
+    let intNum = parseInt(fixNum)
+    return intNum;
 }
 
 function setPayment()
 {
     let paymentType = document.querySelector("#txtPayment").value;
     if(paymentType === "now"){
-        appLaundry.togPaymentNow = true;
-        $("#txtCash").mask('000.000.000.000.000,00', {reverse: true});
+        $("#dPaymentArea").show();
+        document.querySelector("#txtCash").focus();
     }else{
-        appLaundry.togPaymentNow = false;
+        $("#dPaymentArea").hide();
     }
 }
 

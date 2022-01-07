@@ -29,7 +29,7 @@
 <!-- select 2  -->
 <script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/select2/select2.full.min.js"></script>
 <!-- jquery mask  -->
-<script src="{{ asset('/ladun/lib') }}/jquery-mask/jquery.mask.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
 <!-- Dashboard 1 -->
 <script>
     const server = "{{ url('') }}/";
