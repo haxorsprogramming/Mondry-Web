@@ -28,6 +28,8 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <!-- select 2  -->
 <script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/select2/select2.full.min.js"></script>
+<!-- jquery mask  -->
+<script src="{{ asset('/ladun/lib') }}/jquery-mask/jquery.mask.js"></script>
 <!-- Dashboard 1 -->
 <script>
     const server = "{{ url('') }}/";

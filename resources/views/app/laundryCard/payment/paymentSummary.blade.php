@@ -2,7 +2,7 @@
 <div class="row" id="divPaymentMethod" v-if="togPaymentNow">
     <div class="form-group col-md-6">
         <label>Cash</label>
-        <input type="number" class="form-control" onkeyup="setCash()" id="txtCash"/>
+        <input type="text" class="form-control" onkeyup="countPayment()" id="txtCash"/>
     </div>
     <div class="form-group col-md-6">
         <label>Promo Code</label>

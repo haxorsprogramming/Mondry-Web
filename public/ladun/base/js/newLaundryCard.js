@@ -76,13 +76,20 @@ $("#txtCustomer").select2();
 $("#tblNewService").dataTable();
 $("#tblCustomer").dataTable();
 tip(".btnDelete", "Delete");
+
 var no = 1;
+
+function countPayment()
+{
+    let cash = document.querySelector("#txtCash").value;
+    appLaundry.cash = cash;
+}
 
 function setCash()
 {
     let cash = document.querySelector("#txtCash").value;
     appLaundry.cash = cash;
-    let back = parseInt(cash) - parseInt(appLaundry.finalPrice);
+    let back = parseInt(cash) - parseInt(appLaundry.totalPrice);
     appLaundry.back = back;
 }
 
@@ -91,6 +98,7 @@ function setPayment()
     let paymentType = document.querySelector("#txtPayment").value;
     if(paymentType === "now"){
         appLaundry.togPaymentNow = true;
+        $("#txtCash").mask('000.000.000.000.000,00', {reverse: true});
     }else{
         appLaundry.togPaymentNow = false;
     }
