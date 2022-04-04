@@ -103,8 +103,8 @@ function setRole()
 
 function setImg()
 {
-    var citraInput = document.querySelector('#txtFoto');
-    var preview = document.querySelector('#txtPreviewUpload');
+    var citraInput = document.querySelector("#txtFoto");
+    var preview = document.querySelector("#txtPreviewUpload");
     var fileGambar = new FileReader();
     fileGambar.readAsDataURL(citraInput.files[0]);
     fileGambar.onload = function(e){

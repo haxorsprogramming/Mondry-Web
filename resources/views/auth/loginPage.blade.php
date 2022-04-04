@@ -11,7 +11,7 @@
                                 <div class="auth-form">
                                     <div class="text-center mb-3">
                                         <a href="index.html">
-                                            <img src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/nadha_asset/logo_project/mondry_logo.png" alt="" style="width: 200px;border-radius:12px;">
+                                            <img src="https://s3.jagoanstorage.com/aditia-storage/asset/logo/mondry_logo.png" alt="" style="width: 200px;border-radius:12px;">
                                         </a>
                                     </div>
                                     <h4 class="text-center mb-4 text-white">Sign in your account</h4>

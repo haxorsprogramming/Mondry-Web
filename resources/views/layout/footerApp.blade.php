@@ -22,12 +22,12 @@
 <!-- nprogress  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <!-- datatable  -->
-<script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/dataTable/jquery.dataTables.min.js"></script>
+<script src="http://s3.jagoanstorage.com/aditia-storage/lib/datatable/jquery.dataTables.min.js"></script>
 <!-- tippy  -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <!-- select 2  -->
-<script src="https://nadhamedia.s3.ap-southeast-1.amazonaws.com/Project_Asset/Mondry/ladun/select2/select2.full.min.js"></script>
+<script src="http://s3.jagoanstorage.com/aditia-storage/lib/select2/select2.min.js"></script>
 <!-- jquery mask  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
 <!-- Dashboard 1 -->
