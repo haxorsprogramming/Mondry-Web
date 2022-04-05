@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Sulistiya Wati",
+        "address" : "Perbaungan",
+        "email" : "s.wati8922@gmail.com",
+        "phoneNumber" : "097822991122"
+    },
+    {
+        "name": "Johan Firman",
+        "address" : "Sidoarjo",
+        "email" : "johan.f@gmail.com",
+        "phoneNumber" : "087822112322"
+    },
+    {
+        "name": "Ilham Dani",
+        "address" : "Lubuk Pakam",
+        "email" : "ilham.dani123@gmail.com",
+        "phoneNumber" : "08226711822"
+    },
+    {
+        "name": "Ayu Puspita Sari",
+        "address" : "Tebing Tinggi",
+        "email" : "ayu123@gmail.com",
+        "phoneNumber" : "087822991122"
+    },
+    {
+        "name": "Tri Bayu Wardana",
+        "address" : "Sei Rampah",
+        "email" : "bayu@gmail.com",
+        "phoneNumber" : "0878221117822"
+    },
+    
+]

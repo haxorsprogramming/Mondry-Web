@@ -21,6 +21,7 @@ class S_Setting extends Seeder
     {
         $dataSetting = file_get_contents("public/ladun/file/settingsData.json");
         $dataSetting = json_decode($dataSetting);
+
         foreach($dataSetting as $setting){
             // echo $setting -> name."\n";
             $set = new M_Setting();
@@ -29,5 +30,6 @@ class S_Setting extends Seeder
             $set -> value = $setting -> value;
             $set -> save();
         }
+        
     }
 }

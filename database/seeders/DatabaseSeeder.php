@@ -23,7 +23,9 @@ class DatabaseSeeder extends Seeder
             S_Raw_Material::class,
             S_User::class,
             S_Role::class,
-            S_Setting::class
+            S_Setting::class,
+            S_Branch::class,
+            S_Customer::class
         ]);
         // // create manager 
         // $this -> createEmployee('aditia', 'admin123', 'Aditia Darma', $idBranch, "2");
