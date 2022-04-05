@@ -1,17 +1,17 @@
 <div class="deznav" id="divMenu">
     <div class="deznav-scroll">
-        <a href="javascript:void(0)" @click="newLaundryAtc()" class="add-menu-sidebar">+ New Laundry</a>
+        <a href="javascript:void(0)" onclick="load_page('app/laundry-card/new','New Laundry Card')" class="add-menu-sidebar">+ New Laundry</a>
         <ul class="metismenu" id="menu">
             <!-- dashboard  -->
             <li>
-                <a href="javascript:void(0)" @click="dashboardAtc()" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" onclick="load_page('app/dashboard', 'Dashboard')" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">dashboard</i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
             <!-- monitor laundry  -->
             <li>
-                <a href="javascript:void(0)" @click="laundryCardAtc()" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" onclick="load_page('app/laundry-card','New Laundry Card')" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">sticky_note_2</i>
                     <span class="nav-text">Laundry Card</span>
                 </a>
@@ -29,10 +29,10 @@
                     <span class="nav-text">Data Master</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="javascript:void(0)" @click="serviceItemAtc()">Service Item</a></li>
-                    <li><a href="javascript:void(0)" @click="rawMaterialAtc()">Raw Material</a></li>
-                    <li><a href="javascript:void(0)" @click="customerAtc()">Customer</a></li>
-                    <li><a href="javascript:void(0)" @click="promoCode()">Promo Code</a></li>
+                    <li><a href="javascript:void(0)" onclick="load_page('app/service-item','Service Item')">Service Item</a></li>
+                    <li><a href="javascript:void(0)" onclick="load_page('app/raw-material','Raw Material')">Raw Material</a></li>
+                    <li><a href="javascript:void(0)" onclick="load_page('app/customer','Customer')">Customer</a></li>
+                    <li><a href="javascript:void(0)" onclick="load_page('app/promo-code','Promo Code')">Promo Code</a></li>
                 </ul>
             </li>
 
@@ -55,7 +55,7 @@
                 </a>
             </li>
             <!-- logout  -->
-            <li><a href="javascript:void(0)" class="ai-icon" aria-expanded="false" @click="logOutAtc()">
+            <li><a href="javascript:void(0)" class="ai-icon" aria-expanded="false" onclick="logout()">
                 <i class="material-icons">logout</i>
                     <span class="nav-text">Logout</span>
                 </a>

@@ -12,70 +12,34 @@ var rLogOut = server + "logout";
 // vue object
 var menuApp = new Vue({
     el: "#divMenu",
-    data: {},
-    methods: {
-        dashboardAtc : function ()
-        {
-            load_page(rDashboard, "Dashboard");
-        },
-        branchAtc : function()
-        {
-            load_page(rBranch, "Branch");
-        },
-        employeeAtc : function()
-        {
-            load_page(rEmployee, "Employee");
-        },
-        serviceItemAtc : function()
-        {
-            load_page(rServiceItem, "Service Item");
-        },
-        rawMaterialAtc : function()
-        {
-            load_page(rRawMaterial, "Raw Material");
-        },
-        customerAtc : function()
-        {
-            load_page(rCustomer, "Customer");
-        },
-        newLaundryAtc : function()
-        {
-            load_page(rNewLaundry, "New Laundry");
-        },
-        laundryCardAtc : function()
-        {
-            load_page(rLaundryCard, "Laundry Card");
-        },
-        promoCode : function()
-        {
-            load_page(rPromoCode, "Promo Code");
-        },
-        logOutAtc : function()
-        {
-            document.cookie = "MONDRY_TOKEN=";
-            window.location.assign(rLogOut);
-        }
-    },
+    data: {}
 });
 
 // inisialisasi
 document.addEventListener("DOMContentLoaded", function () {
     NProgress.configure({ showSpinner: false });
-    load_page(rDashboard, "Dashboard");
+    load_page("app/dashboard", "Dashboard");
 });
 
-async function load_page(page, page_title)
+function load_page(page, page_title)
 {
+    console.log(page);
     NProgress.start();
     document.querySelector("#divUtama").innerHTML = "<div style='text-align:center;width:100%;margin-top:40px;font-size:20px;'>Loading page ...</div>";
     document.querySelector("#txtTitlePage").innerHTML = page_title;
-    await tidur_bentar(1000);
+    // await tidur_bentar(1000);
     $("#divUtama").load(page);
     NProgress.done();
 }
 
 function tidur_bentar(ms){
     return new Promise(resolve => { setTimeout(resolve, ms) });
+}
+
+function logout()
+{
+    document.cookie = "MONDRY_TOKEN=";
+    window.location.assign(rLogOut);
 }
 
 function pesanUmumApp(icon, title, text)

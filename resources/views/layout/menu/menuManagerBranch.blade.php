@@ -4,7 +4,7 @@
         <ul class="metismenu" id="menu">
             <!-- dashboard  -->
             <li>
-                <a href="javascript:void(0)" @click="dashboardAtc()" class="ai-icon" aria-expanded="false">
+                <a href="javascript:void(0)" onclick="load_page('app/dashboard', 'Dashboard')" class="ai-icon" aria-expanded="false">
                     <i class="material-icons">dashboard</i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -22,7 +22,7 @@
                     <span class="nav-text">Data Master</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="javascript:void(0)" @click="serviceItemAtc()">Service Item</a></li>
+                    <li><a href="javascript:void(0)" onclick="load_page('app/service-item', 'Service Item')">Service Item</a></li>
                     <li><a href="javascript:void(0)" @click="rawMaterialAtc()">Raw Material</a></li>
                     <li><a href="javascript:void(0)">Customer</a></li>
                 </ul>
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <!-- logout  -->
-            <li><a href="javascript:void(0)" class="ai-icon" aria-expanded="false" @click="logOutAtc()">
+            <li><a href="javascript:void(0)" class="ai-icon" aria-expanded="false" onclick="logout()">
                 <i class="material-icons">logout</i>
                     <span class="nav-text">Logout</span>
                 </a>
