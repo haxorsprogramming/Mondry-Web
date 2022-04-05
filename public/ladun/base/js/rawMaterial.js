@@ -24,7 +24,7 @@ var appRaw = new Vue({
         },
         editAtc : function(idRaw)
         {
-            var rToEditRawMaterial = server + "app/raw-material/"+idRaw+"/edit";
+            var rToEditRawMaterial = "app/raw-material/"+idRaw+"/edit";
             load_page(rToEditRawMaterial, "Edit Raw Material");
         }
     }

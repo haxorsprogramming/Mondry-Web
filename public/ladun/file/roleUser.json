@@ -1,0 +1,35 @@
+[
+    {
+        "kdRole": "1",
+        "namaRole" : "Administrator"
+    },
+    {
+        "kdRole" : "2",
+        "namaRole" : "Manager Branch"
+    },
+    {
+        "kdRole" : "3",
+        "namaRole" : "Manager Branch"
+    },
+    {
+        "kdRole" : "4",
+        "namaRole" : "Washer"
+    },
+    {
+        "kdRole" : "5",
+        "namaRole" : "Driyer"
+    },
+    {
+        "kdRole" : "6",
+        "namaRole" : "Iron"
+    },
+    {
+        "kdRole" : "7",
+        "namaRole" : "Courier"
+    },
+    {
+        "kdRole" : "8",
+        "namaRole" : "Cleaning Service"
+    }
+    
+]

@@ -18,6 +18,7 @@ class TblRole extends Migration
             $table -> char('kd_role', 1);
             $table -> char('role_name', 100);
             $table -> text('deks') -> nullable();
+            $table -> timestamps();
         });
     }
 

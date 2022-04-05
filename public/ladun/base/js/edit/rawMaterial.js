@@ -25,6 +25,6 @@ function updateConfirm()
     let ds = {'name':name, 'deks':deks, 'unit':unit, 'stock':stock, 'idRaw':idRaw}
     axios.post(rProcessUpdateRawMaterial, ds).then(function(res){
         pesanUmumApp('success', 'Success', 'Success update raw material ...');
-        load_page(rRawMaterial, "Raw Material");
+        load_page("app/raw-material", "Raw Material");
     });
 }

@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
@@ -8,63 +8,67 @@ use Illuminate\Support\Str;
 class DatabaseSeeder extends Seeder
 {
     
-    protected $faker;
+    // protected $faker;
 
-    public function __construct()
-    {
-        require_once 'vendor/autoload.php';
-        $faker = Faker\Factory::create('id_ID');
-        $this -> faker = $faker;
-    }
+    // public function __construct()
+    // {
+    //     require_once 'vendor/autoload.php';
+    //     $faker = Faker\Factory::create('id_ID');
+    //     $this -> faker = $faker;
+    // }
 
     public function run()
     {
-        $idBranch = Str::uuid();
+        $this -> call([
+            S_Raw_Material::class,
+            S_User::class,
+            S_Role::class
+        ]);
         // create default user 
-        $this -> createSuperUser('admin','admin', '1');
-        // create role 
-        $this -> createRole('1','Administrator', '-');
-        $this -> createRole('2','Manager Branch', '-');
-        $this -> createRole('3','Cashier', '-');
-        $this -> createRole('4','Washer', '-');
-        $this -> createRole('5','Driyer', '-');
-        $this -> createRole('6','Iron', '-');
-        $this -> createRole('7','Courier', '-');
-        $this -> createRole('8','Cleaning Service', '-');
-        // create laundry setting 
-        $this -> createSetting('APP_NAME', 'Application Name', 'Mondry');
-        $this -> createSetting('OWNER', 'Owner Name', 'NadhaMedia');
-        $this -> createSetting('EMAIL', 'Email', 'hi@nadhamedia.com');
-        $this -> createSetting('ADDRESS', 'Laundry Name', 'Mondry');
-        $this -> createSetting('LANG', 'Language', 'ID');
-        $this -> createSetting('DOMAIN', 'Domain name', 'http://mondry.nadhamedia.com');
-        $this -> createSetting('USING_WHATSAPP_GATEWAY', 'Laundry using whatsapp gateway','Y');
-        $this -> createSetting('API_WOOWA', 'API Key Woowa', '-');
-        // create manager 
-        $this -> createEmployee('aditia', 'admin123', 'Aditia Darma', $idBranch, "2");
-        // create default branch 
-        $this -> createBranch($idBranch, "Mondry", "aditia", "Rahmat Hasibuan");
-        // create cashier 
-        $this -> createEmployee('vivi', 'admin123', 'Vivi Maulida', $idBranch, "3");
-        // create customer 
-        $this -> createFakeCustomer(30);
-        // create service item 
-        $this -> createServiceItem($idBranch, "Base Clothes", "6000");
-        $this -> createServiceItem($idBranch, "Sprei", "9000");
-        $this -> createServiceItem($idBranch, "Carpet", "11000");
-        $this -> createServiceItem($idBranch, "Shoes", "7000");
-        $this -> createServiceItem($idBranch, "Gorden", "12000");
-        $this -> createServiceItem($idBranch, "Blanket", "8000");
-        // create raw material 
-        $this -> createRawMaterial("Shampoo", $idBranch, "20");
-        $this -> createRawMaterial("Parfum", $idBranch, "12");
-        $this -> createRawMaterial("Deterjent", $idBranch, "10");
-        $this -> createRawMaterial("Plastic", $idBranch, "15");
-        $this -> createRawMaterial("Soap", $idBranch, "23");
-        // create promo code 
-        $this -> createPromoCode($idBranch, "MERDEKA", "Promo Kemerdekaan", "5", "20");
-        $this -> createPromoCode($idBranch, "NEWYEAR", "Promo Tahun Baru", "10", "30");
-        $this -> createPromoCode($idBranch, "IDULFITRI","Promo Hari raya idul fitri", "15", "20");
+        // $this -> createSuperUser('admin','admin', '1');
+        // // create role 
+        // $this -> createRole('1','Administrator', '-');
+        // $this -> createRole('2','Manager Branch', '-');
+        // $this -> createRole('3','Cashier', '-');
+        // $this -> createRole('4','Washer', '-');
+        // $this -> createRole('5','Driyer', '-');
+        // $this -> createRole('6','Iron', '-');
+        // $this -> createRole('7','Courier', '-');
+        // $this -> createRole('8','Cleaning Service', '-');
+        // // create laundry setting 
+        // $this -> createSetting('APP_NAME', 'Application Name', 'Mondry');
+        // $this -> createSetting('OWNER', 'Owner Name', 'NadhaMedia');
+        // $this -> createSetting('EMAIL', 'Email', 'hi@nadhamedia.com');
+        // $this -> createSetting('ADDRESS', 'Laundry Name', 'Mondry');
+        // $this -> createSetting('LANG', 'Language', 'ID');
+        // $this -> createSetting('DOMAIN', 'Domain name', 'http://mondry.nadhamedia.com');
+        // $this -> createSetting('USING_WHATSAPP_GATEWAY', 'Laundry using whatsapp gateway','Y');
+        // $this -> createSetting('API_WOOWA', 'API Key Woowa', '-');
+        // // create manager 
+        // $this -> createEmployee('aditia', 'admin123', 'Aditia Darma', $idBranch, "2");
+        // // create default branch 
+        // $this -> createBranch($idBranch, "Mondry", "aditia", "Rahmat Hasibuan");
+        // // create cashier 
+        // $this -> createEmployee('vivi', 'admin123', 'Vivi Maulida', $idBranch, "3");
+        // // create customer 
+        // $this -> createFakeCustomer(30);
+        // // create service item 
+        // $this -> createServiceItem($idBranch, "Base Clothes", "6000");
+        // $this -> createServiceItem($idBranch, "Sprei", "9000");
+        // $this -> createServiceItem($idBranch, "Carpet", "11000");
+        // $this -> createServiceItem($idBranch, "Shoes", "7000");
+        // $this -> createServiceItem($idBranch, "Gorden", "12000");
+        // $this -> createServiceItem($idBranch, "Blanket", "8000");
+        // // create raw material 
+        // $this -> createRawMaterial("Shampoo", $idBranch, "20");
+        // $this -> createRawMaterial("Parfum", $idBranch, "12");
+        // $this -> createRawMaterial("Deterjent", $idBranch, "10");
+        // $this -> createRawMaterial("Plastic", $idBranch, "15");
+        // $this -> createRawMaterial("Soap", $idBranch, "23");
+        // // create promo code 
+        // $this -> createPromoCode($idBranch, "MERDEKA", "Promo Kemerdekaan", "5", "20");
+        // $this -> createPromoCode($idBranch, "NEWYEAR", "Promo Tahun Baru", "10", "30");
+        // $this -> createPromoCode($idBranch, "IDULFITRI","Promo Hari raya idul fitri", "15", "20");
     }
 
     function createPromoCode($idBranch, $promoCode, $name, $value, $quota)
@@ -85,20 +89,7 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 
-    function createRawMaterial($name, $idBranch, $stock)
-    {
-        DB::table('tbl_raw') -> insert([
-            'id_raw' => Str::uuid(),
-            'raw_name' => $name,
-            'unit' => 'Kg',
-            'deks' => $this -> faker -> text($maxNbChars = 100),
-            'id_branch' => $idBranch,
-            'stock' => $stock,
-            'created_at' => now(),
-            'updated_at' => now(),
-            'active' => '1'
-        ]);
-    }
+    
 
     function createServiceItem($idBranch, $name, $price)
     {
