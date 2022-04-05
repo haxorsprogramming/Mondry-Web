@@ -18,6 +18,7 @@ class TblSetting extends Migration
             $table -> char('caps_setting', 50);
             $table -> char('setting_name', 200);
             $table -> char('value', 200);
+            $table -> timestamps();
         });
     }
 

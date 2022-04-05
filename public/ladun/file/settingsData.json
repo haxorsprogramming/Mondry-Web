@@ -1,0 +1,42 @@
+[
+    {
+        "caps" : "APP_NAME",
+        "name" : "Application Name",
+        "value" : "Mondry" 
+    },
+    {
+        "caps" : "OWNER",
+        "name" : "Owner Laundry",
+        "value" : "Hasnah Nur Ardita" 
+    },
+    {
+        "caps" : "Email",
+        "name" : "Email laundry",
+        "value" : "alditha.forum@gmail.com" 
+    },
+    {
+        "caps" : "ADDRESS",
+        "name" : "Address laundry",
+        "value" : "Jln. Pendidikan, No. 16, Bandah Khalifah, Percut Sei Tuan" 
+    },
+    {
+        "caps" : "LANG",
+        "name" : "Language of application",
+        "value" : "ID" 
+    },
+    {
+        "caps" : "DOMAIN",
+        "name" : "Domain name",
+        "value" : "http://mondry-web.co.id" 
+    },
+    {
+        "caps" : "USING_WHATSAPP_GATEWAY",
+        "name" : "Application using whatsapp gateway?",
+        "value" : "Y" 
+    },
+    {
+        "caps" : "API_WHATSAPP_GATEWAY",
+        "name" : "API Key whatsapp gateway",
+        "value" : "" 
+    }
+]

@@ -22,28 +22,9 @@ class DatabaseSeeder extends Seeder
         $this -> call([
             S_Raw_Material::class,
             S_User::class,
-            S_Role::class
+            S_Role::class,
+            S_Setting::class
         ]);
-        // create default user 
-        // $this -> createSuperUser('admin','admin', '1');
-        // // create role 
-        // $this -> createRole('1','Administrator', '-');
-        // $this -> createRole('2','Manager Branch', '-');
-        // $this -> createRole('3','Cashier', '-');
-        // $this -> createRole('4','Washer', '-');
-        // $this -> createRole('5','Driyer', '-');
-        // $this -> createRole('6','Iron', '-');
-        // $this -> createRole('7','Courier', '-');
-        // $this -> createRole('8','Cleaning Service', '-');
-        // // create laundry setting 
-        // $this -> createSetting('APP_NAME', 'Application Name', 'Mondry');
-        // $this -> createSetting('OWNER', 'Owner Name', 'NadhaMedia');
-        // $this -> createSetting('EMAIL', 'Email', 'hi@nadhamedia.com');
-        // $this -> createSetting('ADDRESS', 'Laundry Name', 'Mondry');
-        // $this -> createSetting('LANG', 'Language', 'ID');
-        // $this -> createSetting('DOMAIN', 'Domain name', 'http://mondry.nadhamedia.com');
-        // $this -> createSetting('USING_WHATSAPP_GATEWAY', 'Laundry using whatsapp gateway','Y');
-        // $this -> createSetting('API_WOOWA', 'API Key Woowa', '-');
         // // create manager 
         // $this -> createEmployee('aditia', 'admin123', 'Aditia Darma', $idBranch, "2");
         // // create default branch 
@@ -194,12 +175,4 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 
-    function createSetting($caps, $name, $value)
-    {
-        DB::table('tbl_setting') -> insert([
-            'caps_setting' => $caps,
-            'setting_name' => $name,
-            'value' => $value
-        ]);
-    }
 }

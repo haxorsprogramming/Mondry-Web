@@ -15,28 +15,19 @@ class S_User extends Seeder
      */
     public function run()
     {
-        $this -> createSuperUser('admin', 'admin', '1');
-        
+        $idBranch = env('ID_BRANCH_DEFAULT');
+        $this -> createUser('admin', 'admin', '1', 'default');
     }
 
-    function createSuperUser($username, $password, $role)
+    function createUser($username, $password, $role, $idBranch)
     {
         $user = new M_User();
         $user -> username = $username;
         $user -> role = $role;
-        $user -> id_branch = 'default';
+        $user -> id_branch = '$idBranch';
         $user -> password = password_hash($password, PASSWORD_DEFAULT);
         $user -> active = '1';
         $user -> save();
-        // DB::table('tbl_user') -> insert([
-        //     'username' => $username,
-        //     'role' => $role,
-        //     'id_branch' => 'default',
-        //     'password' => password_hash($password, PASSWORD_DEFAULT),
-        //     'active' => '1',
-        //     'created_at' => now(),
-        //     'updated_at' => now()
-        // ]);
     }
 
 }
