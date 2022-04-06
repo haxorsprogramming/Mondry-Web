@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
+
 use App\Models\M_Role;
 
 class S_Role extends Seeder

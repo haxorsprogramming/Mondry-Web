@@ -1,0 +1,44 @@
+[
+    {
+        "name" : "Base Clothes",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 5000 
+    },
+    {
+        "name" : "Sprei",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 10000 
+    },
+    {
+        "name" : "Carpet",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 11000 
+    },
+    {
+        "name" : "Shoes",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 9000 
+    },
+    {
+        "name" : "Gorden",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 7500 
+    },
+    {
+        "name" : "Blanket",
+        "deks" : "-",
+        "unit" : "pcs",
+        "type" : "S",
+        "price" : 6000 
+    }
+]

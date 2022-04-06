@@ -7,15 +7,6 @@ use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
-    
-    // protected $faker;
-
-    // public function __construct()
-    // {
-    //     require_once 'vendor/autoload.php';
-    //     $faker = Faker\Factory::create('id_ID');
-    //     $this -> faker = $faker;
-    // }
 
     public function run()
     {
@@ -25,29 +16,9 @@ class DatabaseSeeder extends Seeder
             S_Role::class,
             S_Setting::class,
             S_Branch::class,
-            S_Customer::class
+            S_Customer::class,
+            S_Service_Item::class
         ]);
-        // // create manager 
-        // $this -> createEmployee('aditia', 'admin123', 'Aditia Darma', $idBranch, "2");
-        // // create default branch 
-        // $this -> createBranch($idBranch, "Mondry", "aditia", "Rahmat Hasibuan");
-        // // create cashier 
-        // $this -> createEmployee('vivi', 'admin123', 'Vivi Maulida', $idBranch, "3");
-        // // create customer 
-        // $this -> createFakeCustomer(30);
-        // // create service item 
-        // $this -> createServiceItem($idBranch, "Base Clothes", "6000");
-        // $this -> createServiceItem($idBranch, "Sprei", "9000");
-        // $this -> createServiceItem($idBranch, "Carpet", "11000");
-        // $this -> createServiceItem($idBranch, "Shoes", "7000");
-        // $this -> createServiceItem($idBranch, "Gorden", "12000");
-        // $this -> createServiceItem($idBranch, "Blanket", "8000");
-        // // create raw material 
-        // $this -> createRawMaterial("Shampoo", $idBranch, "20");
-        // $this -> createRawMaterial("Parfum", $idBranch, "12");
-        // $this -> createRawMaterial("Deterjent", $idBranch, "10");
-        // $this -> createRawMaterial("Plastic", $idBranch, "15");
-        // $this -> createRawMaterial("Soap", $idBranch, "23");
         // // create promo code 
         // $this -> createPromoCode($idBranch, "MERDEKA", "Promo Kemerdekaan", "5", "20");
         // $this -> createPromoCode($idBranch, "NEWYEAR", "Promo Tahun Baru", "10", "30");

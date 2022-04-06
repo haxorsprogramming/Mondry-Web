@@ -7,34 +7,27 @@ use App\Models\M_Raw_Material;
 
 class S_Raw_Material extends Seeder
 {
-    // protected $faker;
-
-    // public function __construct()
-    // {
-    //     require_once 'vendor/autoload.php';
-    //     $faker = Faker\Factory::create('id_ID');
-    //     $this -> faker = $faker;
-    // }
 
     public function run()
     {
-        $idBranch = env('ID_BRANCH_DEFAULT');
-        echo $idBranch;
+        $this -> createRawMaterial();
     }
 
-    function createRawMaterial($name, $idBranch, $stock)
+    function createRawMaterial()
     {
-        // DB::table('tbl_raw') -> insert([
-        //     'id_raw' => Str::uuid(),
-        //     'raw_name' => $name,
-        //     'unit' => 'Kg',
-        //     'deks' => $this -> faker -> text($maxNbChars = 100),
-        //     'id_branch' => $idBranch,
-        //     'stock' => $stock,
-        //     'created_at' => now(),
-        //     'updated_at' => now(),
-        //     'active' => '1'
-        // ]);
+        $dataRaw = file_get_contents("public/ladun/file/rawMaterial.json");
+        $dataRaw = json_decode($dataRaw);
 
+        foreach($dataRaw as $raw){
+            $rm = new M_Raw_Material();
+            $rm -> id_raw = Str::uuid();
+            $rm -> raw_name = $raw -> name;
+            $rm -> unit = $raw -> unit;
+            $rm -> deks = $raw -> deks;
+            $rm -> id_branch = env('ID_BRANCH_DEFAULT');
+            $rm -> stock = $raw -> stock;
+            $rm -> active = "1";
+            $rm -> save();
+        }
     }
 }

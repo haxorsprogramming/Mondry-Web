@@ -1,0 +1,33 @@
+[
+    {
+        "name" : "Shampoo",
+        "unit" : "litre",
+        "deks" : "",
+        "stock" : "11"
+    },
+    {
+        "name" : "Parfum",
+        "unit" : "litre",
+        "deks" : "",
+        "stock" : "20"
+    },
+    {
+        "name" : "Deterjent",
+        "unit" : "litre",
+        "deks" : "",
+        "stock" : "35"
+    },
+    {
+        "name" : "Plastic",
+        "unit" : "pcs",
+        "deks" : "",
+        "stock" : "40"
+    },
+    {
+        "name" : "Soap",
+        "unit" : "litre",
+        "deks" : "",
+        "stock" : "22"
+    }
+
+]
