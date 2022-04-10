@@ -50,4 +50,9 @@ class C_Promo_Code extends Controller
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
+    public function dataEditPromoCode(Request $request)
+    {
+        $dataPromo = M_Promo_Code::where('id_code', $request -> idCode) -> first();
+        return \Response::json($dataPromo);
+    }
 }

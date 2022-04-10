@@ -51,4 +51,5 @@ Route::post('/app/laundry-card/promo-code/check', [C_Laundry_Card::class, 'check
 // promo code 
 Route::get('/app/promo-code', [C_Promo_Code::class, 'promoCodePage']);
 Route::post('/app/promo-code/add/process', [C_Promo_Code::class, 'processAddNewPromoCode']);
-Route::post('app/promo-code/delete/process', [C_Promo_Code::class, 'processDeletePromoCode']);
+Route::post('/app/promo-code/delete/process', [C_Promo_Code::class, 'processDeletePromoCode']);
+Route::post('/app/promo-code/edit/data', [C_Promo_Code::class, 'dataEditPromoCode']);
