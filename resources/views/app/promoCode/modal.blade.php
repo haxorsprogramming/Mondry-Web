@@ -17,6 +17,10 @@
                             <input type="text" class="form-control" placeholder="Promo name" id="txtName">
                         </div>
                         <div class="form-group col-md-6">
+                            <label>Promo Code</label>
+                            <input type="text" class="form-control" placeholder="Promo code" id="txtPromoCode">
+                        </div>
+                        <div class="form-group col-md-6">
                             <label>Description</label>
                             <textarea class="form-control" style="resize: none;" placeholder="Description" id="txtDeks"></textarea>
                         </div>

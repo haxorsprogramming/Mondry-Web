@@ -4,15 +4,15 @@ var rProcessAddNewPromo = server + "app/promo-code/add/process";
 var appPromo = new Vue({
     el : "#divPromoCode",
     data : {
-        togDataPromoCode : true
+
     },
     methods : {
         addPromoCodeAtc : function()
         {
             $("#modalTambahProduk").modal("show");
-            setInterval(function(){
-                document.querySelector("#txtName").focus();
-            }, 300);
+            // setTimeout(function(){
+            //     document.querySelector("#txtName").focus();
+            // }, 300);
         },
         processAddNewPromoAtc : function()
         {
@@ -22,12 +22,19 @@ var appPromo = new Vue({
             let value = document.querySelector("#txtValue").value;
             let quota = document.querySelector("#txtQuota").value;
             let expired = document.querySelector("#txtExpired").value;
-            if(quota === ""){ quota = null }
-            let ds = {'name':name, 'deks':deks, 'type':type, 'value':value, 'quota':quota, 'expired':expired}
-            axios.post(rProcessAddNewPromo, ds).then(function(res){
-                let obj = res.data;
-                console.log(obj);
-            });
+            let promoCode = document.querySelector("#txtPromoCode").value;
+
+            let del = ['txtName', 'txtDeks', 'txtType'];
+            let cf = ced(del);
+            if(cf === true){
+                let ds = {'name':name, 'deks':deks, 'type':type, 'value':value, 'quota':quota, 'expired':expired, 'promoCode':promoCode}
+                axios.post(rProcessAddNewPromo, ds).then(function(res){
+                    let obj = res.data;
+                    pesanUmumApp('success', 'Success', 'Success add new promo ...');
+                });
+            }
+            // 
+            
         }
     }
 });

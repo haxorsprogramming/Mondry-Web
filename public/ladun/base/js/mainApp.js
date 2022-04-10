@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function load_page(page, page_title)
 {
-    console.log(page);
+    // console.log(page);
     NProgress.start();
     document.querySelector("#divUtama").innerHTML = "<div style='text-align:center;width:100%;margin-top:40px;font-size:20px;'>Loading page ...</div>";
     document.querySelector("#txtTitlePage").innerHTML = page_title;
@@ -72,4 +72,21 @@ function confirmQuest(icon, title, text, x)
             x();
         }
     });
+}
+
+function ced(elm)
+{
+    let status = true;
+    for (let i = 0; i < elm.length; i++) {
+        let vel = document.querySelector("#"+elm[i]).value;
+        if(vel.length  === 0){
+            status = false;
+        }
+    }
+    if(status === false){
+        pesanUmumApp('warning', 'Fill field !!!', 'Harap isi semua field !!!');
+        return false;
+    }else{
+        return true;
+    }
 }

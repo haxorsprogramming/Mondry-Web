@@ -1,5 +1,5 @@
 <!-- promo code list  -->
-<div class="col-xl-12" id="divDataPromoCode" v-if="togDataPromoCode">
+<div class="col-xl-12" id="divDataPromoCode">
     <div class="card">
         <div class="card-header border-0 pb-0">
             <h5 class="card-title">List Promo Code</h5>
