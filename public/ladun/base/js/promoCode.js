@@ -41,6 +41,10 @@ var appPromo = new Vue({
         deleteAtc : function(idCode)
         {
             confirmQuest('info', 'Confirmation', 'Delete promo code ...?', function (x) {confirmDeletePromoCode(idCode)});
+        },
+        editAtc : function(idCode)
+        {
+            $("#modalEditPromo").modal("show");
         }
     }
 });

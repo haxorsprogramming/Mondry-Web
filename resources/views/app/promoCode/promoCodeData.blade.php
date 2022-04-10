@@ -31,7 +31,7 @@
                             <td>Rp. {{ number_format($promo -> value) }}</td>
                         @endif
                         <td>
-                            <a href="javascript:void(0)" class="btn btn-success shadow btn-sm sharp mr-1 editPromoCode"><i class="fa fa-pencil"></i></a>
+                            <a href="javascript:void(0)" class="btn btn-success shadow btn-sm sharp mr-1 editPromoCode" @click="editAtc('{{ $promo -> id_code }}')"><i class="fa fa-pencil"></i></a>
                             <a href="javascript:void(0)" class="btn btn-danger shadow btn-sm sharp delPromoCode" @click="deleteAtc('{{ $promo -> id_code }}')"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
