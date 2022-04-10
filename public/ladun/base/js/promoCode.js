@@ -1,5 +1,6 @@
 // route 
 var rProcessAddNewPromo = server + "app/promo-code/add/process";
+var rProcessDeletePromo = server + "app/promo-code/delete/process";
 // vue object 
 var appPromo = new Vue({
     el : "#divPromoCode",
@@ -9,10 +10,10 @@ var appPromo = new Vue({
     methods : {
         addPromoCodeAtc : function()
         {
-            $("#modalTambahProduk").modal("show");
-            // setTimeout(function(){
-            //     document.querySelector("#txtName").focus();
-            // }, 300);
+            $("#modalAddPromoCode").modal("show");
+            setTimeout(function(){
+                document.querySelector("#txtName").focus();
+            }, 500);
         },
         processAddNewPromoAtc : function()
         {
@@ -29,14 +30,33 @@ var appPromo = new Vue({
             if(cf === true){
                 let ds = {'name':name, 'deks':deks, 'type':type, 'value':value, 'quota':quota, 'expired':expired, 'promoCode':promoCode}
                 axios.post(rProcessAddNewPromo, ds).then(function(res){
-                    let obj = res.data;
                     pesanUmumApp('success', 'Success', 'Success add new promo ...');
+                    setTimeout(function(){
+                        $('#modalAddPromoCode').modal('hide');
+                        load_page('app/promo-code','Promo Code');
+                    }, 300);
                 });
             }
-            // 
-            
+        },
+        deleteAtc : function(idCode)
+        {
+            confirmQuest('info', 'Confirmation', 'Delete promo code ...?', function (x) {confirmDeletePromoCode(idCode)});
         }
     }
 });
 // inisialisasi 
 $("#tblPromoCode").dataTable();
+tip(".delPromoCode", "Delete promo code");
+tip(".editPromoCode", "Edit promo code");
+
+function confirmDeletePromoCode(idCode)
+{
+    let ds = {'idCode':idCode}
+    axios.post(rProcessDeletePromo, ds).then(function(res){
+        pesanUmumApp('success', 'Success', 'Success delete a promo ...');
+        setTimeout(function(){
+            $('#modalTambahProduk').modal('hide');
+            load_page('app/promo-code','Promo Code');
+        }, 300);
+    });
+}   

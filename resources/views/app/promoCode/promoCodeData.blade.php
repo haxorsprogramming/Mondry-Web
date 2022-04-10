@@ -23,10 +23,17 @@
                     @foreach($dataPromo as $promo)
                     <tr>
                         <td>{{ $loop -> iteration }}</td>
-                        <td>{{ $promo -> promo_name }}</td>
+                        <td>{{ $promo -> promo_name }}<br/><strong>{{ $promo -> promo_code }}</strong></td>
                         <td>{{ $promo -> deks }}</td>
-                        <td>{{ $promo -> type }}</td>
-                        <td></td>
+                        @if($promo -> type == 'P')
+                            <td>{{ $promo -> value }} % </td>
+                        @else
+                            <td>Rp. {{ number_format($promo -> value) }}</td>
+                        @endif
+                        <td>
+                            <a href="javascript:void(0)" class="btn btn-success shadow btn-sm sharp mr-1 editPromoCode"><i class="fa fa-pencil"></i></a>
+                            <a href="javascript:void(0)" class="btn btn-danger shadow btn-sm sharp delPromoCode" @click="deleteAtc('{{ $promo -> id_code }}')"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>

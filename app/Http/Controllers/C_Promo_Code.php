@@ -31,6 +31,7 @@ class C_Promo_Code extends Controller
         $promo = new M_Promo_Code();
         $promo -> id_code = Str::uuid();
         $promo -> id_branch = $this -> branchData -> id_branch;
+        $promo -> promo_code = $request -> promoCode;
         $promo -> promo_name = $request -> name;
         $promo -> deks = $request -> deks;
         $promo -> type = $request -> type;
@@ -39,6 +40,13 @@ class C_Promo_Code extends Controller
         $promo -> expired_on = $request -> expired;
         $promo -> active = "1";
         $promo -> save();
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
+    public function processDeletePromoCode(Request $request)
+    {
+        // idCode
+        M_Promo_Code::where('id_code', $request -> idCode) -> delete();
         $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
