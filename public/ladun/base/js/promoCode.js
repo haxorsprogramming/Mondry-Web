@@ -9,9 +9,10 @@ var appPromo = new Vue({
     methods : {
         addPromoCodeAtc : function()
         {
-            appPromo.togDataPromoCode = false;
-            $("#divAddPromoCode").show();
-            document.querySelector("#txtName").focus();
+            $("#modalTambahProduk").modal("show");
+            setInterval(function(){
+                document.querySelector("#txtName").focus();
+            }, 300);
         },
         processAddNewPromoAtc : function()
         {

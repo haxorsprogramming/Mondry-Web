@@ -30,7 +30,7 @@ class S_Service_Item extends Seeder
             $si -> deks = $item -> deks;
             $si -> unit = $item -> unit;
             $si -> type = $item -> type;
-            $si -> price_at = $item -> price.
+            $si -> price_at = $item -> price;
             $si -> active = "1";
             $si -> save();
         }
