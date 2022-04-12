@@ -131,7 +131,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-12"></div>
                 </div>
                 <div>
-                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)">
+                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="updatePromoProcessAtc()">
                         <span class="btn-icon-left text-success"><i class="material-icons">add_task</i></span>Save promo
                     </a>
                 </div>

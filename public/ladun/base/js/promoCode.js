@@ -2,11 +2,12 @@
 var rProcessAddNewPromo = server + "app/promo-code/add/process";
 var rProcessDeletePromo = server + "app/promo-code/delete/process";
 var rGetDataPromo = server + "app/promo-code/edit/data";
+var rProcessUpdatePromo = server + "app/promo-code/update/process";
 // vue object 
 var appPromo = new Vue({
     el : "#divPromoCode",
     data : {
-
+        idCodeEdit : ''
     },
     methods : {
         addPromoCodeAtc : function()
@@ -27,6 +28,7 @@ var appPromo = new Vue({
         editAtc : function(idCode)
         {
             let ds = {'idCode':idCode}
+            appPromo.idCodeEdit = idCode;
             axios.post(rGetDataPromo, ds).then(function(res){
                 document.querySelector("#txtNameEdit").value = res.data.promo_name;
                 document.querySelector("#txtDeksEdit").value = res.data.deks;
@@ -36,6 +38,25 @@ var appPromo = new Vue({
                 document.querySelector("#txtQuotaEdit").value = res.data.quota;
                 document.querySelector("#txtExpiredEdit").value = res.data.expired_on;
                 $("#modalEditPromo").modal("show");
+            });
+        },
+        updatePromoProcessAtc : function()
+        {
+            let idCode = appPromo.idCodeEdit;
+            let nama = document.querySelector("#txtNameEdit").value;
+            let deks = document.querySelector("#txtDeksEdit").value;
+            let promoCode = document.querySelector("#txtPromoCodeEdit").value;
+            let value = document.querySelector("#txtValueEdit").value;
+            let type = document.querySelector("#txtTypeEdit").value;
+            let quota = document.querySelector("#txtQuotaEdit").value;
+            let expired = document.querySelector("#txtExpiredEdit").value;
+            let ds = {'nama':nama, 'deks':deks, 'promoCode':promoCode, 'value':value, 'type':type, 'quota':quota, 'expired':expired, 'idCode':idCode}
+            axios.post(rProcessUpdatePromo, ds).then(function(res){
+                pesanUmumApp('success', 'Success', 'Success update promo ...');
+                setTimeout(function(){
+                    $('#modalEditPromo').modal('hide');
+                    load_page('app/promo-code','Promo Code');
+                }, 300);
             });
         }
     }

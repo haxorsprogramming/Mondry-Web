@@ -55,4 +55,19 @@ class C_Promo_Code extends Controller
         $dataPromo = M_Promo_Code::where('id_code', $request -> idCode) -> first();
         return \Response::json($dataPromo);
     }
+    public function processUpdatePromoCode(Request $request)
+    {
+        // {'nama':nama, 'deks':deks, 'promoCode':promoCode, 'value':value, 'type':type, 'quota':quota, 'expired':expired}
+        M_Promo_Code::where('id_code', $request -> idCode) -> update([
+            'promo_code' => $request -> promoCode,
+            'promo_name' => $request -> nama,
+            'deks' => $request -> deks,
+            'type' => $request -> type,
+            'value' => $request -> value,
+            'quota' => $request -> quota,
+            'expired_on' => $request -> expired
+        ]);
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
 }
